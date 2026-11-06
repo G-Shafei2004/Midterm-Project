@@ -323,3 +323,75 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
         background-position: center;
     }
 }
+/* Keep the existing table on tablets and computers. */
+.comparison-mobile {
+  display: none;
+}
+
+/* Show stacked comparison cards on phones. */
+@media (max-width: 767px) {
+  .comparison-result {
+    overflow: visible;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .comparison-result table {
+    display: none;
+  }
+
+  .comparison-mobile {
+    display: grid;
+    gap: 16px;
+  }
+
+  .comparison-mobile-card {
+    min-width: 0;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+
+  .comparison-mobile-card h3 {
+    margin: 0;
+    padding: 15px 18px;
+    background: var(--blue-dark);
+    color: #fff;
+    border-radius: 11px 11px 0 0;
+    font-size: 1.3rem;
+  }
+
+  .comparison-mobile-card dl {
+    margin: 0;
+    padding: 0 16px;
+  }
+
+  .comparison-mobile-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: 12px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .comparison-mobile-row:last-child {
+    border-bottom: 0;
+  }
+
+  .comparison-mobile-row dt {
+    color: var(--muted);
+    font-weight: 500;
+    overflow-wrap: anywhere;
+  }
+
+  .comparison-mobile-row dd {
+    margin: 0;
+    text-align: right;
+    overflow-wrap: anywhere;
+  }
+
+  .comparison-result .comparison-disclaimer {
+    padding: 14px 0 0;
+  }
+}

@@ -159,7 +159,38 @@ document.addEventListener("DOMContentLoaded", () => {
     const note = document.createElement("p");
     note.className = "comparison-disclaimer";
     note.textContent = "Illustrative educational reference values only. Actual specifications vary by model year, market and configuration.";
-    comparisonResult.replaceChildren(table, note);
+    // Build comparison cards for phone screens.
+const mobileCards = document.createElement("div");
+mobileCards.className = "comparison-mobile";
+
+selectedModels.forEach((model) => {
+  const card = document.createElement("article");
+  card.className = "comparison-mobile-card";
+
+  const heading = document.createElement("h3");
+  heading.textContent = model.name;
+
+  const details = document.createElement("dl");
+
+  rows.forEach(([label, getValue]) => {
+    const row = document.createElement("div");
+    row.className = "comparison-mobile-row";
+
+    const term = document.createElement("dt");
+    term.textContent = label.replace(" (example)", "");
+
+    const value = document.createElement("dd");
+    value.textContent = getValue(model);
+
+    row.append(term, value);
+    details.appendChild(row);
+  });
+
+  card.append(heading, details);
+  mobileCards.appendChild(card);
+});
+
+comparisonResult.replaceChildren(table, mobileCards, note);
     comparisonResult.hidden = false;
   });
   updateCompareSelection();
