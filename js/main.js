@@ -17,7 +17,7 @@ $(function () {
       $answer.stop(true, true).slideUp(180, function () { this.hidden = true; });
     } else {
       $button.attr("aria-expanded", "true").find("span").text("−");
-      $answer.prop("hidden", false).hide().stop(true, true).slideDown(220);
+      $answer.stop(true, true).prop("hidden", false).hide().slideDown(220);
     }
   });
 
