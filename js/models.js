@@ -280,3 +280,67 @@ comparisonResult.replaceChildren(table, mobileCards, note);
 
   renderModels();
 });
+// Save and restore an unfinished conversation request.
+$(function () {
+  const storageKey = "bmwConversationDraft";
+
+  const fieldIds = [
+    "fullname",
+    "email",
+    "phone",
+    "interestModel",
+    "budget",
+    "message"
+  ];
+
+  const firstField = document.getElementById("fullname");
+  const form = firstField ? firstField.closest("form") : null;
+
+  if (!form) return;
+
+  // Restore previously saved values.
+  try {
+    const draft = JSON.parse(localStorage.getItem(storageKey));
+
+    if (draft && typeof draft === "object") {
+      fieldIds.forEach(function (id) {
+        const field = document.getElementById(id);
+
+        if (field && typeof draft[id] === "string") {
+          field.value = draft[id];
+        }
+      });
+    }
+  } catch (error) {
+    // The form still works if storage is unavailable.
+  }
+
+  // Save the draft whenever a field changes.
+  function saveDraft() {
+    const draft = {};
+
+    fieldIds.forEach(function (id) {
+      const field = document.getElementById(id);
+      if (field) draft[id] = field.value;
+    });
+
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(draft));
+    } catch (error) {
+      // The form still works if storage is unavailable.
+    }
+  }
+
+  form.addEventListener("input", saveDraft);
+  form.addEventListener("change", saveDraft);
+
+  // Your existing validation resets the form after success.
+  // Remove the saved draft when that happens.
+  form.addEventListener("reset", function () {
+    try {
+      localStorage.removeItem(storageKey);
+    } catch (error) {
+      // Storage may be unavailable.
+    }
+  });
+});

@@ -395,3 +395,57 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
     padding: 14px 0 0;
   }
 }
+/* Comparison table: colours and clearer interaction */
+#comparisonResult table thead th {
+  background: #123d6a;
+  color: #fff;
+  padding: 18px 20px;
+  border-bottom: 3px solid #c99a18;
+}
+
+#comparisonResult table tbody th,
+#comparisonResult table tbody td {
+  padding: 16px 20px;
+  transition: background-color 0.2s ease;
+}
+
+/* Light alternating rows */
+#comparisonResult table tbody tr:nth-child(even) > * {
+  background-color: #f3f6fa;
+}
+
+/* Highlight the row being read */
+#comparisonResult table tbody tr:hover > * {
+  background-color: #e4eef9;
+}
+
+/* Animate new comparison results */
+#comparisonResult table,
+#comparisonResult .comparison-mobile {
+  animation: comparisonAppear 0.35s ease-out;
+}
+
+@keyframes comparisonAppear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respect visitors who prefer less animation */
+@media (prefers-reduced-motion: reduce) {
+  #comparisonResult table,
+  #comparisonResult .comparison-mobile {
+    animation: none;
+  }
+
+  #comparisonResult table tbody th,
+  #comparisonResult table tbody td {
+    transition: none;
+  }
+}

@@ -113,7 +113,9 @@
                 <div class="col-12 col-md-6"><label for="interestModel" class="form-label">Model of interest *</label><select id="interestModel" name="model" class="form-select" required aria-describedby="interestModelError" aria-invalid="false"><option value="">Choose a model</option></select><small class="field-error" id="interestModelError" aria-live="polite"></small></div>
                 <div class="col-12 col-md-6"><label for="budget" class="form-label">Budget in USD *</label><input type="number" id="budget" name="budget" class="form-control" placeholder="e.g. 60000" min="30000" max="300000" step="1000" required aria-describedby="budgetError" aria-invalid="false"><small class="field-error" id="budgetError" aria-live="polite"></small></div>
                 <div class="col-12 col-md-6"><label for="message" class="form-label">Message</label><input type="text" id="message" name="message" class="form-control" maxlength="400" placeholder="Optional details" aria-describedby="messageError" aria-invalid="false"><small class="field-error" id="messageError" aria-live="polite"></small></div>
-                <div class="col-12"><button type="submit" class="btn btn-gold">Validate request <span aria-hidden="true">→</span></button><p class="form-hint">* Required fields. No information is transmitted or stored.</p></div>
+                <div class="col-12"><button type="submit" class="btn btn-gold">Validate request <span aria-hidden="true">→</span></button><p class="form-hint">* Required fields. Your unfinished details are saved in this browser
+and cleared after successful validation. Nothing is sent to a server.
+Avoid entering private details on a shared device.</p></div>
               </div>
               <div class="success-message" id="successMessage" role="status" aria-live="polite" hidden><strong>Request details look good!</strong><p>Your demo request has been validated successfully. No message was sent to a server.</p></div>
             </form>
