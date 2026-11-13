@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <meta
+      name="description"
+      content="Explore BMW models, matching paint previews and your personal saved collection."
+    >
+    <title>BMW Explorer | Your saved cars</title>
+    <script src="js/theme-init.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" >
+    <link rel="stylesheet" href="css/style.css" >
+    <link rel="stylesheet" href="css/final.css" >
+      <link rel="stylesheet" href="css/bmw-polish.css?v=20261112" >
+  </head>
+  <body id="pageTop">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark site-navbar"
+      aria-label="Main navigation"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">BMW <span>EXPLORER</span></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-label="Toggle navigation"
+          aria-controls="mainNav"
+          aria-expanded="false"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link" data-nav="home" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-nav="innovation" href="innovation.html"
+                >BMW Innovation</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-nav="models" href="models.html"
+                >Models &amp; Garage</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-nav="saved" href="saved.html"
+                >Saved cars <span class="saved-count">0</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-nav="faq" href="index.html#faq">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <button
+                id="themeToggle"
+                type="button"
+                class="theme-toggle"
+                aria-pressed="false"
+              >
+                Dark mode
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main id="main">
+      <header class="page-hero compact-hero">
+        <div class="container">
+          <p class="eyebrow">YOUR PERSONAL COLLECTION</p>
+          <h1>Your next <span>possibilities.</span></h1>
+          <p>
+            Save the cars that catch your eye. Your collection stays here when
+            you return.
+          </p>
+        </div>
+      </header>
+      <section>
+        <div class="container">
+          <div class="section-heading-row">
+            <div>
+              <h2 class="section-title">
+                Saved <span class="accent">cars.</span>
+              </h2>
+              <p id="savedSummary" aria-live="polite"></p>
+            </div>
+            <button
+              id="clearSaved"
+              class="btn btn-outline-secondary"
+              type="button"
+            >
+              Clear all saved cars
+            </button>
+          </div>
+          <div id="savedGrid" class="row g-4"></div>
+          <div id="savedEmpty" class="empty-state" hidden>
+            <h3>Your collection starts here</h3>
+            <p>
+              Choose Save on a model card or its detail page. Your saved cars
+              will appear here.
+            </p>
+            <a class="btn btn-gold" href="models.html"
+              >Explore the collection →</a
+            >
+          </div>
+          <p class="small mt-4">
+            Saved in this browser only. Example prices are not dealer
+            quotations.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div>
+            <a class="navbar-brand" href="index.html"
+              >BMW <span>EXPLORER</span></a
+            >
+            <p>A little curiosity.<br >A drive that feels like you.</p>
+          </div>
+          <div class="footer-links">
+            <a href="innovation.html">BMW Innovation</a
+            ><a href="models.html">Explore models</a
+            ><a href="models.html#garage">Build your car</a
+            ><a href="saved.html">Your saved cars</a
+            ><a href="models.html#contact">Request a conversation</a>
+          </div>
+          <div class="footer-note">
+            <p>
+              Independent educational project.<br >Not affiliated with BMW.
+            </p>
+            <p>
+              Illustrative prices. No orders or messages are sent to a dealer.
+            </p>
+            <a href="#pageTop">Back to top ↑</a>
+          </div>
+        </div>
+        <details class="footer-credits" id="credits">
+          <summary>Credits &amp; sources</summary>
+          <div class="credits-content">
+            <h2 class="visually-hidden">Sources and acknowledgements</h2>
+            <h3>Code and typography</h3>
+            <ul>
+              <li>
+                <a href="https://getbootstrap.com/docs/5.3/">Bootstrap 5.3.3</a
+                >: responsive grid, navigation and form components.
+              </li>
+              <li>
+                <a href="https://jquery.com/">jQuery 3.7.1</a>: FAQ slide
+                effects, catalogue fades and smooth scrolling.
+              </li>
+              <li>
+                <a href="https://fonts.google.com/">Google Fonts</a>: Inter and
+                Playfair Display.
+              </li>
+              
+            </ul>
+            <h3>BMW model and colour previews</h3>
+            <p>
+              Model and paint images © BMW AG, sourced from the official BMW
+              Middle East model pages linked below. Local WebP copies are used
+              for educational demonstration. Paint availability and vehicl
+              equipment vary by market and model year. These images are not
+              claimed as original work.
+            </p>
+            <ul class="footer-model-sources"></ul>
+            <h3>Editorial photographs and video</h3>
+            <ul>
+              <li>
+                <a href="https://unsplash.com/@thylervoss"
+                  >Thyler Voss / Unsplash</a
+                >: mountain-road BMW photograph. This is the photographer
+                profile; the exact original photo URL remains unconfirmed.
+              </li>
+              <li>
+                <a href="https://unsplash.com/photos/_4sWbzH5fp8"
+                  >Josh Berquist / Unsplash</a
+                >: silver BMW M4.
+              </li>
+              <li>
+                <a href="https://unsplash.com/photos/ApT14-r3OH0"
+                  >Erik Mclean / Unsplash</a
+                >: red BMW.
+              </li>
+              <li>
+                <a href="https://unsplash.com/photos/AvuK9LPk2eg"
+                  >Martin Katler / Unsplash</a
+                >: black BMW coupe.
+              </li>
+              <li>
+                <a
+                  href="https://pixabay.com/videos/car-vehicle-road-bmw-speed-167659/"
+                  >Ali_fathy / Pixabay</a
+                >: home-page driving video.
+              </li>
+            </ul>
+            
+            <p>
+              <a href="https://github.com/G-Shafei2004/Midterm-Project"
+                >Project repository</a
+              >
+              ·
+              <a href="https://g-shafei2004.github.io/Midterm-Project/"
+                >GitHub Pages</a
+              >
+            </p>
+          </div>
+        </details>
+        <div class="footer-bottom">
+          <small>© 2026 · Ghulam Ali Shafei</small
+          ><span>Made for the joy of exploring.</span>
+        </div>
+      </div>
+    </footer>
+    <div
+      id="siteStatus"
+      class="site-status"
+      role="status"
+      aria-live="polite"
+    ></div>
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js?v=configure-fix-20261113"></script>
+    <script src="js/saved.js"></script>
+    <script src="js/experience.js"></script>
+  </body>
+</html>

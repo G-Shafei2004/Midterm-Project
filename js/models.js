@@ -1,622 +1,525 @@
-// BMW model data used by the catalogue, comparison and garage.
-const bmwModels = [
-  {
-    id: "3-series",
-    name: "3 Series",
-    category: "Sedan",
-    price: 45000,
-    power: 255,
-    acceleration: "5.8 s",
-    engine: "2.0L Turbo Inline-4",
-    image: "images/model-3series.jpg",
-    imageAlt: "Representative BMW vehicle photograph; exact model shown may differ",
-    description: "A balanced sports sedan for everyday driving."
-  },
-  {
-    id: "5-series",
-    name: "5 Series",
-    category: "Sedan",
-    price: 58000,
-    power: 255,
-    acceleration: "6.0 s",
-    engine: "2.0L Turbo Inline-4",
-    image: "images/model-3series.jpg",
-    imageAlt: "Representative BMW vehicle photograph; exact model shown may differ",
-    description: "Executive comfort with a confident, modern character."
-  },
-  {
-    id: "7-series",
-    name: "7 Series",
-    category: "Sedan",
-    price: 97000,
-    power: 375,
-    acceleration: "5.4 s",
-    engine: "3.0L Turbo Inline-6",
-    image: "images/model-3series.jpg",
-    imageAlt: "Representative BMW vehicle photograph; exact model shown may differ",
-    description: "A flagship sedan focused on space and refinement."
-  },
-  {
-    id: "x3",
-    name: "X3",
-    category: "SUV",
-    price: 47000,
-    power: 248,
-    acceleration: "6.0 s",
-    engine: "2.0L Turbo Inline-4",
-    image: "images/model-x5.jpg",
-    imageAlt: "Representative BMW vehicle photograph; exact model shown may differ",
-    description: "A versatile SUV with everyday practicality."
-  },
-  {
-    id: "x5",
-    name: "X5",
-    category: "SUV",
-    price: 65000,
-    power: 375,
-    acceleration: "5.3 s",
-    engine: "3.0L Turbo Inline-6",
-    image: "images/model-x5.jpg",
-    imageAlt: "Representative BMW vehicle photograph; exact model shown may differ",
-    description: "A spacious SUV combining comfort and capability."
-  },
-  {
-    id: "x7",
-    name: "X7",
-    category: "SUV",
-    price: 82000,
-    power: 375,
-    acceleration: "5.8 s",
-    engine: "3.0L Turbo Inline-6",
-    image: "images/model-x5.jpg",
-    imageAlt: "Representative BMW vehicle photograph; exact model shown may differ",
-    description: "A large luxury SUV with three-row versatility."
-  },
-  {
-    id: "m3",
-    name: "M3 Competition",
-    category: "Performance",
-    price: 78000,
-    power: 503,
-    acceleration: "3.8 s",
-    engine: "3.0L Twin-Turbo Inline-6",
-    image: "images/model-m3.jpg",
-    imageAlt: "Representative BMW vehicle photograph; exact model shown may differ",
-    description: "High-performance engineering with a track-inspired edge."
-  },
-  {
-    id: "i4",
-    name: "i4",
-    category: "Electric",
-    price: 53000,
-    power: 335,
-    acceleration: "5.7 s",
-    engine: "Fully electric",
-    image: "images/model-3series.jpg",
-    imageAlt: "Representative BMW vehicle photograph; exact model shown may differ",
-    description: "An all-electric Gran Coupé with instant response."
-  }
-];
+"use strict";
+(() => {
+  const { models, money, reduced } = BMW;
+  const $id = (id) => document.getElementById(id);
+  const grid = $id("modelGrid"),
+    search = $id("modelSearch"),
+    category = $id("categoryFilter"),
+    sort = $id("sortModels");
 
-const money = (amount) => "$" + amount.toLocaleString("en-US");
+  let initialRender = true;
 
-document.addEventListener("DOMContentLoaded", () => {
-  const grid = document.getElementById("modelGrid");
-  if (!grid) return;
-
-  const searchInput = document.getElementById("modelSearch");
-  const categoryFilter = document.getElementById("categoryFilter");
-  const sortSelect = document.getElementById("sortModels");
-  const emptyState = document.getElementById("emptyState");
-  const resultSummary = document.getElementById("resultSummary");
-  const collectionCount = document.getElementById("collectionCount");
-
-  // Search, filter, sort and display model cards.
   function renderModels() {
-    const query = searchInput.value.trim().toLowerCase();
-    const category = categoryFilter.value;
-
-    const visibleModels = bmwModels.filter((model) => {
-      const searchableText =
-        `${model.name} ${model.category} ${model.description}`.toLowerCase();
-
-      const matchesText = searchableText.includes(query);
-      const matchesCategory =
-        category === "all" || model.category === category;
-
-      return matchesText && matchesCategory;
-    });
-
-    if (sortSelect.value === "price-low") {
-      visibleModels.sort((a, b) => a.price - b.price);
-    }
-
-    if (sortSelect.value === "price-high") {
-      visibleModels.sort((a, b) => b.price - a.price);
-    }
-
-    if (sortSelect.value === "power") {
-      visibleModels.sort((a, b) => b.power - a.power);
-    }
-
-    if (sortSelect.value === "name") {
-      visibleModels.sort((a, b) => a.name.localeCompare(b.name));
-    }
-
+    const query = search.value.trim().toLowerCase();
+    const list = models.filter(
+      (m) =>
+        `${m.name} ${m.category} ${m.description}`
+          .toLowerCase()
+          .includes(query) &&
+        (category.value === "all" || m.category === category.value),
+    );
+    const order = {
+      "price-low": (a, b) => a.price - b.price,
+      "price-high": (a, b) => b.price - a.price,
+      power: (a, b) => b.power - a.power,
+      name: (a, b) => a.name.localeCompare(b.name),
+    };
+    list.sort(order[sort.value] || order.name);
     const fragment = document.createDocumentFragment();
-
-    visibleModels.forEach((model) => {
-      const column = document.createElement("div");
-      column.className = "col-12 col-md-6 col-lg-4";
-
-      const card = document.createElement("article");
-      card.className = "model-card";
-
-      card.innerHTML = `
-        <img
-          src="${model.image}"
-          alt="${model.imageAlt} for the ${model.name} listing"
-          loading="lazy"
-        >
-        <div class="model-card-body">
-          <div class="model-card-top">
-            <span class="model-category">${model.category}</span>
-            <span class="model-power">${model.power} hp</span>
-          </div>
-          <h3>${model.name}</h3>
-          <p>${model.description}</p>
-          <div class="model-card-bottom">
-            <strong>${money(model.price)}</strong>
-            <button
-              class="text-link choose-model"
-              type="button"
-              data-model="${model.id}"
-            >
-              Configure →
-            </button>
-          </div>
-        </div>
-      `;
-
-      column.appendChild(card);
-      fragment.appendChild(column);
-    });
-
-    // Fade between catalogue results.
-    $(grid).stop(true, true).fadeTo(100, 0.25, function () {
+    list.forEach((m) => fragment.append(BMW.card(m)));
+    if (initialRender) {
+      // Fill the grid synchronously so anchor positions are stable on first load.
       grid.replaceChildren(fragment);
-      $(grid).fadeTo(180, 1);
-
-      $(".model-card").hover(
-        function () {
-          $(this).addClass("is-hovered");
-        },
-        function () {
-          $(this).removeClass("is-hovered");
-        }
-      );
-    });
-
-    const count = visibleModels.length;
-    collectionCount.textContent = `${count} MODEL${count === 1 ? "" : "S"}`;
-    resultSummary.textContent =
-      `Showing ${count} of ${bmwModels.length} models`;
-    emptyState.hidden = count !== 0;
+      BMW.syncSaved();
+      initialRender = false;
+    } else {
+      $(grid)
+        .stop(true, true)
+        .fadeTo(reduced ? 0 : 90, 0.3, () => {
+          grid.replaceChildren(fragment);
+          BMW.syncSaved();
+          $(grid).fadeTo(reduced ? 0 : 180, 1);
+        });
+    }
+    $id("collectionCount").textContent = `${list.length} MODELS`;
+    $id("resultSummary").textContent =
+      `Showing ${list.length} of ${models.length} models`;
+    $id("emptyState").hidden = !!list.length;
   }
-
-  searchInput.addEventListener("input", renderModels);
-
-  searchInput.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      searchInput.value = "";
+  search.addEventListener("input", renderModels);
+  category.addEventListener("change", renderModels);
+  sort.addEventListener("change", renderModels);
+  search.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      search.value = "";
       renderModels();
     }
   });
-
-  categoryFilter.addEventListener("change", renderModels);
-  sortSelect.addEventListener("change", renderModels);
-
-  document.getElementById("resetFilters").addEventListener("click", () => {
-    searchInput.value = "";
-    categoryFilter.value = "all";
-    sortSelect.value = "name";
+  $id("resetFilters").addEventListener("click", () => {
+    search.value = "";
+    category.value = "all";
+    sort.value = "name";
     renderModels();
+    search.focus();
   });
-
-  // Fill the garage and form model selectors.
-  const configModel = document.getElementById("configModel");
-  const interestModel = document.getElementById("interestModel");
-
-  bmwModels.forEach((model) => {
-    configModel.add(new Option(model.name, model.id));
-    interestModel.add(new Option(model.name, model.id));
-  });
-
-  // Model comparison.
-  const comparePicker = document.getElementById("comparePicker");
-  const compareButton = document.getElementById("compareButton");
-  const compareCounter = document.getElementById("compareCounter");
-  const comparisonResult = document.getElementById("comparisonResult");
-
-  const compareError = document.createElement("p");
-  compareError.id = "compareError";
-  compareError.className = "text-danger mt-2";
-  compareError.setAttribute("role", "alert");
-  comparePicker.insertAdjacentElement("afterend", compareError);
-
-  bmwModels.forEach((model) => {
+  // Automatic comparison: one to three selected cars, no action buttons.
+  const picker = $id("comparePicker"),
+    result = $id("comparisonResult"),
+    error = $id("compareError");
+  models.forEach((m) => {
     const label = document.createElement("label");
     label.className = "compare-option";
-
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.value = model.id;
-    checkbox.setAttribute("aria-label", `Compare ${model.name}`);
-    checkbox.setAttribute("aria-describedby", "compareError");
-
-    const name = document.createElement("span");
-    name.textContent = model.name;
-
-    label.append(checkbox, name);
-    comparePicker.appendChild(label);
+    const input = document.createElement("input");
+    input.type = "checkbox";
+    input.value = m.id;
+    input.setAttribute("aria-label", `Compare ${m.name}`);
+    input.setAttribute("aria-describedby", "compareError");
+    const span = document.createElement("span");
+    span.textContent = m.name;
+    label.append(input, span);
+    picker.append(label);
   });
 
-  function updateCompareSelection() {
-    const checked = comparePicker.querySelectorAll("input:checked");
-
-    compareCounter.textContent = `${checked.length} / 3 selected`;
-    compareButton.disabled = checked.length < 2 || checked.length > 3;
-
-    // Keep boxes clickable to explain attempted fourth selections.
-    comparePicker.querySelectorAll("input").forEach((input) => {
-      input.disabled = false;
-    });
-
-    compareError.textContent = "";
-  }
-
-  comparePicker.addEventListener("change", (event) => {
-    const checkbox = event.target;
-
-    if (!checkbox.matches('input[type="checkbox"]')) return;
-
-    const selectedCount =
-      comparePicker.querySelectorAll("input:checked").length;
-
-    if (selectedCount > 3) {
-      checkbox.checked = false;
-      updateCompareSelection();
-
-      compareError.textContent =
-        "You can compare up to 3 models. Unselect one before choosing another.";
+  function renderComparison() {
+    const ids = [...picker.querySelectorAll(":checked")].map((i) => i.value),
+      selected = models.filter((m) => ids.includes(m.id));
+    $id("compareCounter").textContent = `${selected.length} / 3 selected`;
+    $id("compareHelp").textContent =
+      selected.length === 1
+        ? "Add another model to compare side by side. Uncheck to remove."
+        : "Results update automatically. Uncheck a model to remove it.";
+    result.hidden = !selected.length;
+    if (!selected.length) {
+      result.replaceChildren();
       return;
     }
-
-    updateCompareSelection();
-  });
-
-  document.getElementById("clearCompare").addEventListener("click", () => {
-    comparePicker.querySelectorAll("input").forEach((input) => {
-      input.checked = false;
-      input.disabled = false;
-    });
-
-    comparisonResult.hidden = true;
-    comparisonResult.replaceChildren();
-    updateCompareSelection();
-  });
-
-  compareButton.addEventListener("click", () => {
-    const selectedIds = [
-      ...comparePicker.querySelectorAll("input:checked")
-    ].map((input) => input.value);
-
-    if (selectedIds.length < 2 || selectedIds.length > 3) {
-      compareError.textContent = "Please select two or three models.";
-      return;
-    }
-
-    compareError.textContent = "";
-
-    const selectedModels = bmwModels.filter((model) =>
-      selectedIds.includes(model.id)
-    );
-
     const rows = [
-      ["Category", (model) => model.category],
-      ["Starting price (example)", (model) => money(model.price)],
-      ["Power (example)", (model) => `${model.power} hp`],
-      ["0–100 km/h (example)", (model) => model.acceleration],
-      ["Powertrain (example)", (model) => model.engine]
+      ["Category", (m) => m.category],
+      ["Starting price (example)", (m) => money(m.price)],
+      ["Power (example)", (m) => `${m.power} hp`],
+      ["0–100 km/h (example)", (m) => m.acceleration],
+      ["Powertrain (example)", (m) => m.engine],
     ];
-
-    // Desktop and tablet comparison table.
     const table = document.createElement("table");
     table.className = "table align-middle";
-
-    const thead = document.createElement("thead");
-    const header = document.createElement("tr");
-
-    [
-      "Specification",
-      ...selectedModels.map((model) => model.name)
-    ].forEach((label) => {
+    const caption = document.createElement("caption");
+    caption.className = "visually-hidden";
+    caption.textContent = "Selected BMW models and example specifications";
+    table.append(caption);
+    const thead = document.createElement("thead"),
+      head = document.createElement("tr");
+    ["Specification", ...selected.map((m) => m.name)].forEach((text) => {
       const th = document.createElement("th");
       th.scope = "col";
-      th.textContent = label;
-      header.appendChild(th);
+      th.textContent = text;
+      head.append(th);
     });
-
-    thead.appendChild(header);
-    table.appendChild(thead);
-
-    const tbody = document.createElement("tbody");
-
-    rows.forEach(([label, getValue]) => {
-      const tr = document.createElement("tr");
-
-      const th = document.createElement("th");
+    thead.append(head);
+    table.append(thead);
+    const body = document.createElement("tbody");
+    rows.forEach(([label, value]) => {
+      const tr = document.createElement("tr"),
+        th = document.createElement("th");
       th.scope = "row";
       th.textContent = label;
-      tr.appendChild(th);
-
-      selectedModels.forEach((model) => {
+      tr.append(th);
+      selected.forEach((m) => {
         const td = document.createElement("td");
-        td.textContent = getValue(model);
-        tr.appendChild(td);
+        td.textContent = value(m);
+        tr.append(td);
       });
-
-      tbody.appendChild(tr);
+      body.append(tr);
     });
-
-    table.appendChild(tbody);
-
-    // Stacked comparison cards for phones.
-    const mobileCards = document.createElement("div");
-    mobileCards.className = "comparison-mobile";
-
-    selectedModels.forEach((model) => {
-      const card = document.createElement("article");
-      card.className = "comparison-mobile-card";
-
-      const heading = document.createElement("h3");
-      heading.textContent = model.name;
-
-      const details = document.createElement("dl");
-
-      rows.forEach(([label, getValue]) => {
+    table.append(body);
+    const mobile = document.createElement("div");
+    mobile.className = "comparison-mobile";
+    selected.forEach((m) => {
+      const article = document.createElement("article");
+      article.className = "comparison-mobile-card";
+      const h = document.createElement("h3");
+      h.textContent = m.name;
+      const dl = document.createElement("dl");
+      rows.forEach(([label, value]) => {
         const row = document.createElement("div");
         row.className = "comparison-mobile-row";
-
-        const term = document.createElement("dt");
-        term.textContent = label.replace(" (example)", "");
-
-        const value = document.createElement("dd");
-        value.textContent = getValue(model);
-
-        row.append(term, value);
-        details.appendChild(row);
+        const dt = document.createElement("dt"),
+          dd = document.createElement("dd");
+        dt.textContent = label.replace(" (example)", "");
+        dd.textContent = value(m);
+        row.append(dt, dd);
+        dl.append(row);
       });
-
-      card.append(heading, details);
-      mobileCards.appendChild(card);
+      article.append(h, dl);
+      mobile.append(article);
     });
-
     const note = document.createElement("p");
     note.className = "comparison-disclaimer";
     note.textContent =
-      "Illustrative educational reference values only. Actual specifications vary by model year, market and configuration.";
-
-    comparisonResult.replaceChildren(table, mobileCards, note);
-    comparisonResult.hidden = false;
-  });
-
-  updateCompareSelection();
-
-  // Interactive garage.
-  const configColor = document.getElementById("configColor");
-  const configPackage = document.getElementById("configPackage");
-  const configTotal = document.getElementById("configTotal");
-
-  function updateGarage() {
-    const selected =
-      bmwModels.find((model) => model.id === configModel.value) ||
-      bmwModels[0];
-
-    const paintCost = Number(configColor.value);
-    const packageCost = Number(configPackage.value);
-    const total = selected.price + paintCost + packageCost;
-
-    document.getElementById("previewName").textContent = selected.name;
-    document.getElementById("previewImage").src = selected.image;
-    document.getElementById("previewImage").alt =
-      `Representative BMW vehicle photograph for the ${selected.name} configuration; exact model shown may differ`;
-
-    document.getElementById("previewSpec").textContent =
-      `${selected.power} hp · ${selected.category}`;
-
-    document.getElementById("previewColor").textContent =
-      configColor.options[configColor.selectedIndex].text.split(" (+")[0];
-
-    const paintColors = {
-      "0": "#f4f4f1",
-      "750": "#1c6dd0",
-      "1200": "#b62b32",
-      "1500": "#73777e"
-    };
-
-    document.getElementById("colorSwatch").style.backgroundColor =
-      paintColors[configColor.value];
-
-    configTotal.textContent = money(total);
+      "Illustrative educational values. Actual specifications vary by model year, market and configuration.";
+    result.replaceChildren(table, mobile, note);
   }
-
-  [configModel, configColor, configPackage].forEach((control) => {
-    control.addEventListener("change", updateGarage);
-  });
-
-  updateGarage();
-
-  grid.addEventListener("click", (event) => {
-    const button = event.target.closest(".choose-model");
-    if (!button) return;
-
-    configModel.value = button.dataset.model;
-    updateGarage();
-
-    document.getElementById("garage").scrollIntoView({
-      behavior: "smooth"
-    });
-  });
-
-  // Conversation form validation.
-  const form = document.getElementById("inquiryForm");
-  const successMessage = document.getElementById("successMessage");
-
-  const fields = [
-    "fullname",
-    "email",
-    "phone",
-    "interestModel",
-    "budget"
-  ];
-
-  const validators = {
-    fullname: (value) =>
-      value.trim().length >= 2
-        ? ""
-        : "Enter at least 2 characters for your name.",
-
-    email: (value) =>
-      /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value.trim())
-        ? ""
-        : "Enter a valid email address.",
-
-    phone: (value) => {
-      const digits = value.replace(/\D/g, "");
-
-      return (
-        digits.length >= 7 &&
-        digits.length <= 15 &&
-        /^\+?[0-9\s().-]+$/.test(value.trim())
-      )
-        ? ""
-        : "Enter a valid phone number with 7 to 15 digits.";
-    },
-
-    interestModel: (value) =>
-      bmwModels.some((model) => model.id === value)
-        ? ""
-        : "Choose a BMW model.",
-
-    budget: (value) =>
-      Number(value) >= 30000 && Number(value) <= 300000
-        ? ""
-        : "Enter a budget between $30,000 and $300,000."
-  };
-
-  function validateField(id) {
-    const field = document.getElementById(id);
-    const error = validators[id](field.value);
-
-    document.getElementById(id + "Error").textContent = error;
-    field.classList.toggle("is-invalid", Boolean(error));
-    field.classList.toggle("is-valid", !error);
-    field.setAttribute("aria-invalid", String(Boolean(error)));
-
-    return !error;
-  }
-
-  function hideSuccessMessage() {
-    $(successMessage).stop(true, true).hide();
-    successMessage.hidden = true;
-  }
-
-  fields.forEach((id) => {
-    const field = document.getElementById(id);
-    field.addEventListener("input", () => validateField(id));
-    field.addEventListener("change", () => validateField(id));
-  });
-
-  // Remove an old success message when the user edits again.
-  form.addEventListener("input", hideSuccessMessage);
-  form.addEventListener("change", hideSuccessMessage);
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const isValid = fields.map(validateField).every(Boolean);
-
-    if (!isValid) {
-      hideSuccessMessage();
-
-      const firstInvalid = form.querySelector(".is-invalid");
-      if (firstInvalid) firstInvalid.focus();
-
+  picker.addEventListener("change", (e) => {
+    if (!e.target.matches("input[type=checkbox]")) return;
+    error.textContent = "";
+    if (picker.querySelectorAll(":checked").length > 3) {
+      e.target.checked = false;
+      error.textContent =
+        "You can compare up to 3 models. Unselect one before choosing another.";
       return;
     }
-
-    // Reset the form and clear its saved draft.
-    form.reset();
-
-    fields.forEach((id) => {
-      const field = document.getElementById(id);
-      field.classList.remove("is-valid", "is-invalid");
-      field.setAttribute("aria-invalid", "false");
-      document.getElementById(id + "Error").textContent = "";
-    });
-
-    $(successMessage).stop(true, true);
-    successMessage.hidden = false;
-    $(successMessage).hide().slideDown(250);
+    renderComparison();
+  });
+  renderComparison();
+  // Garage: only show paint variants for the selected model.
+  const config = $id("configModel"),
+    paint = $id("configColor"),
+    pack = $id("configPackage"),
+    interest = $id("interestModel");
+  models.forEach((m) => {
+    config.add(new Option(m.name, m.id));
+    interest.add(new Option(m.name, m.id));
   });
 
-  // Local storage: remember an unfinished conversation request.
-  const storageKey = "bmwConversationDraft";
-  const draftFieldIds = [...fields, "message"];
-
-  // Restore after the model selector has been populated.
-  try {
-    const draft = JSON.parse(localStorage.getItem(storageKey));
-
-    if (draft && typeof draft === "object" && !Array.isArray(draft)) {
-      draftFieldIds.forEach((id) => {
-        const field = document.getElementById(id);
-
-        if (field && typeof draft[id] === "string") {
-          field.value = draft[id];
-        }
-      });
-    }
-  } catch (error) {
-    // The form still works if saved data or storage is unavailable.
+  function populatePaints(preferred) {
+    const m = models.find((m) => m.id === config.value) || models[0];
+    paint.replaceChildren(
+      ...m.colors.map((c) => new Option(`${c.name} (+${money(c.cost)})`, c.id)),
+    );
+    if (m.colors.some((c) => c.id === preferred)) paint.value = preferred;
+    updateGarage();
   }
+
+  function updateGarage() {
+    const m = models.find((m) => m.id === config.value) || models[0],
+      c = m.colors.find((c) => c.id === paint.value) || m.colors[0];
+    BMW.setImage($id("previewImage"), c, m);
+    $id("previewName").textContent = m.name;
+    $id("previewSpec").textContent = `${m.power} hp · ${m.category} · example`;
+    $id("previewColor").textContent = c.name;
+    $id("colorSwatch").style.backgroundColor = c.hex;
+    $id("configTotal").textContent = money(
+      m.price + c.cost + Number(pack.value),
+    );
+    BMW.paints($id("paintSwatches"), m, c.id, (id) => {
+      paint.value = id;
+      updateGarage();
+
+    });
+  }
+  // A deep link from Model Details selects the model (and optional paint/package)
+  // directly in this Garage. No banner or second configurator is needed.
+  const params = new URLSearchParams(location.search);
+  const initial = models.find(m => m.id === params.get("model"));
+  const requestedPaint = params.get("paint");
+  const requestedPackage = params.get("package");
+  function loadFromLink() {
+    if (initial) config.value = initial.id;
+    if (["0", "1800", "3200"].includes(String(requestedPackage))) pack.value = String(requestedPackage);
+    populatePaints(requestedPaint);
+
+  }
+  config.addEventListener("change", () => populatePaints());
+  paint.addEventListener("change", updateGarage);
+  pack.addEventListener("change", updateGarage);
+  loadFromLink();
+
+  // Clicking Configure in THIS catalogue must immediately select THAT car.
+  // Do not rely on an anchor with #garage: otherwise a generic smooth-scroll
+  // handler can scroll without applying the requested model query parameter.
+  grid.addEventListener("click", (event) => {
+    const link = event.target.closest("a[data-configure]");
+    if (!link || !grid.contains(link) || event.defaultPrevented) return;
+    // Keep native behavior for Ctrl/Cmd-click, Shift-click and other tabs.
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const chosen = models.find((item) => item.id === link.dataset.configure);
+    if (!chosen) return;
+    event.preventDefault();
+    event.stopPropagation();
+    config.value = chosen.id;
+    pack.value = "0";
+    populatePaints(chosen.colors[0].id);
+
+    // Preserve a shareable deep link and standard browser Back navigation.
+    const url = new URL(link.href, location.href);
+    history.pushState({ garageModel: chosen.id }, "", url.pathname + url.search + url.hash);
+    $id("garage").scrollIntoView({ behavior: reduced ? "instant" : "smooth", block: "start" });
+  });
+
+  // Handle Back/Forward after choosing a different card on the same page.
+  window.addEventListener("popstate", () => {
+    const query = new URLSearchParams(location.search);
+    const model = models.find((m) => m.id === query.get("model"));
+    if (model) {
+      config.value = model.id;
+      pack.value = ["0", "1800", "3200"].includes(query.get("package")) ? query.get("package") : "0";
+      populatePaints(query.get("paint"));
+    } else {
+      config.value = models[0].id;
+      pack.value = "0";
+      populatePaints(models[0].colors[0].id);
+    }
+  });
+  // Browsers may restore a previously chosen dropdown value from their Back/
+  // Forward cache after scripts run. Re-apply the explicit model link then.
+  window.addEventListener("pageshow", (event) => { if (event.persisted && initial) loadFromLink(); });
+  if (location.hash === "#garage" && initial) {
+    requestAnimationFrame(() => requestAnimationFrame(() => $id("garage").scrollIntoView({block:"start"})));
+  }
+  // Form validation and browser-only draft storage.
+  const form = $id("inquiryForm"),
+    success = $id("successMessage"),
+    budget = $id("budget"),
+    country = $id("countryCode"),
+    customCode = $id("customCode");
+  const required = [
+    "fullname",
+    "email",
+    "countryCode",
+    "phone",
+    "interestModel",
+    "budget",
+  ];
+  const draftFields = [...required, "customCode", "message"];
+  const touched = new Set();
+  const storageKey = "bmwConversationDraft";
+
+  function hideSuccess() {
+    $(success).stop(true, true).hide();
+    success.hidden = true;
+  }
+
+  function budgetHint() {
+    const m = models.find((m) => m.id === interest.value);
+    $id("budgetHint").textContent = m
+      ? `Minimum for the ${m.name}: ${money(m.price)}. Maximum demo budget: $300,000.`
+      : "Choose a model to see its minimum starting budget.";
+    budget.placeholder = m
+      ? `At least ${money(m.price)}`
+      : "Choose a model first";
+  }
+
+  function countryFields() {
+    $id("customCodeWrap").hidden = country.value !== "other";
+    customCode.required = country.value === "other";
+  }
+
+  function validate(id) {
+    const value = $id(id).value.trim();
+    let message = "";
+    const model = models.find((m) => m.id === interest.value);
+    if (id === "fullname") {
+      const letters = value.match(/\p{L}/gu) || [];
+      if (letters.length < 2 || !/^\p{L}[\p{L}\p{M}\s’'\-]*$/u.test(value))
+        message =
+          "Use at least 2 letters. Numbers and other symbols are not allowed.";
+    }
+    if (id === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value))
+      message = "Enter a valid email address, such as name@example.com.";
+    if (id === "countryCode") {
+      if (!value) message = "Select your country calling code.";
+      else if (
+        value === "other" &&
+        !/^\+[1-9]\d{0,2}$/.test(customCode.value.trim())
+      )
+        message =
+          "Enter a calling code starting with + and 1–3 digits, such as +81.";
+    }
+    if (id === "phone") {
+      const digits = value.replace(/[\s()-]/g, "");
+      const code = country.value === "other" ? customCode.value : country.value;
+      if (
+        !/^[0-9\s()-]+$/.test(value) ||
+        digits.length < 6 ||
+        digits.length > 14
+      )
+        message =
+          "Use digits only, with optional spaces or brackets. Enter 6–14 digits without the country code.";
+      else if (["+7", "+1"].includes(code) && digits.length !== 10)
+        message = "This calling code requires a 10-digit national number.";
+      else if (code === "+93" && digits.length !== 9)
+        message = "For +93, enter 9 digits without the leading 0.";
+      else if (
+        code &&
+        code !== "other" &&
+        code.replace(/\D/g, "").length + digits.length > 15
+      )
+        message = "The full international number must not exceed 15 digits.";
+    }
+    if (id === "interestModel" && !model) message = "Choose a BMW model.";
+    if (id === "budget") {
+      if (!model) message = "Choose your model of interest first.";
+      else if (
+        !/^\d+(\.\d{1,2})?$/.test(value) ||
+        !Number.isFinite(Number(value))
+      )
+        message =
+          "Enter a numeric amount in USD, without letters or currency symbols.";
+      else if (Number(value) < model.price)
+        message = `For the ${model.name}, enter at least ${money(model.price)}.`;
+      else if (Number(value) > 300000)
+        message = "The maximum demo budget is $300,000.";
+    }
+    const field = $id(id);
+    $id(id + "Error").textContent = message;
+    field.classList.toggle("is-invalid", !!message);
+    field.classList.toggle("is-valid", !message);
+    field.setAttribute("aria-invalid", String(!!message));
+    if (id === "countryCode") {
+      customCode.classList.toggle(
+        "is-invalid",
+        !!message && country.value === "other",
+      );
+      customCode.setAttribute(
+        "aria-invalid",
+        String(!!message && country.value === "other"),
+      );
+    }
+    return !message;
+  }
+  // Prevent typing/pasting letters into phone and budget inputs; validation also checks restored values.
+  function restrict(field, allowed, message) {
+    field.addEventListener("beforeinput", (e) => {
+      if (e.isComposing || !e.data || e.inputType?.startsWith("delete")) return;
+      if (!allowed.test(e.data)) {
+        e.preventDefault();
+        hideSuccess();
+        touched.add(field.id);
+        $id(field.id + "Error").textContent = message;
+        field.classList.add("is-invalid");
+        field.setAttribute("aria-invalid", "true");
+      }
+    });
+    field.addEventListener("paste", (e) => {
+      const text = e.clipboardData.getData("text");
+      if (!allowed.test(text)) {
+        e.preventDefault();
+        hideSuccess();
+        touched.add(field.id);
+        $id(field.id + "Error").textContent = message;
+        field.classList.add("is-invalid");
+        field.setAttribute("aria-invalid", "true");
+      }
+    });
+  }
+  restrict(
+    $id("phone"),
+    /^[0-9\s()-]+$/,
+    "Phone numbers cannot contain letters. Use the country-code selector above.",
+  );
+  restrict(
+    budget,
+    /^[0-9.]+$/,
+    "Enter a numeric USD amount without letters or currency symbols.",
+  );
+  required.forEach((id) => {
+    $id(id).addEventListener("blur", () => {
+      touched.add(id);
+      validate(id);
+    });
+    $id(id).addEventListener("input", () => {
+      if (touched.has(id)) validate(id);
+    });
+    $id(id).addEventListener("change", () => {
+      touched.add(id);
+      validate(id);
+    });
+  });
+  country.addEventListener("change", () => {
+    countryFields();
+    if (touched.has("phone")) validate("phone");
+  });
+  customCode.addEventListener("input", () => {
+    touched.add("countryCode");
+    validate("countryCode");
+    if (touched.has("phone")) validate("phone");
+  });
+  interest.addEventListener("change", () => {
+    budgetHint();
+    if (touched.has("budget") || budget.value) validate("budget");
+  });
 
   function saveDraft() {
-    const draft = {};
-
-    draftFieldIds.forEach((id) => {
-      const field = document.getElementById(id);
-      if (field) draft[id] = field.value;
-    });
-
+    const data = {};
+    draftFields.forEach((id) => (data[id] = $id(id).value));
     try {
-      localStorage.setItem(storageKey, JSON.stringify(draft));
-    } catch (error) {
-      // The form still works if storage is unavailable.
+      localStorage.setItem(storageKey, JSON.stringify(data));
+    } catch (_) {
+      BMW.notify("Browser storage is unavailable; this draft cannot be saved.");
     }
   }
+  form.addEventListener("input", () => {
+    hideSuccess();
+    saveDraft();
+  });
+  form.addEventListener("change", () => {
+    hideSuccess();
+    saveDraft();
+  });
 
-  form.addEventListener("input", saveDraft);
-  form.addEventListener("change", saveDraft);
-
+  function clearState() {
+    touched.clear();
+    required.forEach((id) => {
+      $id(id).classList.remove("is-valid", "is-invalid");
+      $id(id).setAttribute("aria-invalid", "false");
+      $id(id + "Error").textContent = "";
+    });
+    customCode.classList.remove("is-invalid");
+    customCode.setAttribute("aria-invalid", "false");
+    budgetHint();
+    countryFields();
+  }
   form.addEventListener("reset", () => {
     try {
       localStorage.removeItem(storageKey);
-    } catch (error) {
-      // Storage may be unavailable.
-    }
+    } catch (_) {}
+    setTimeout(clearState, 0);
   });
-
+  $id("clearDraft").addEventListener("click", () => {
+    form.reset();
+    hideSuccess();
+    $id("fullname").focus();
+    BMW.notify("Your form draft has been cleared.");
+  });
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    hideSuccess();
+    required.forEach((id) => touched.add(id));
+    if (!required.map(validate).every(Boolean)) {
+      form.querySelector(".is-invalid").focus();
+      return;
+    }
+    form.reset();
+    clearState();
+    success.hidden = false;
+    $(success)
+      .stop(true, true)
+      .hide()
+      .slideDown(reduced ? 0 : 220);
+  });
+  try {
+    const draft = JSON.parse(localStorage.getItem(storageKey));
+    if (draft && typeof draft === "object" && !Array.isArray(draft))
+      draftFields.forEach((id) => {
+        if (typeof draft[id] === "string") $id(id).value = draft[id];
+      });
+  } catch (_) {}
+  if (initial) interest.value = initial.id;
+  budgetHint();
+  countryFields();
+  $id("buildRequest").addEventListener("click", () => {
+    interest.value = config.value;
+    budget.value = String(
+      models.find((m) => m.id === config.value).price +
+        models
+          .find((m) => m.id === config.value)
+          .colors.find((c) => c.id === paint.value).cost +
+        Number(pack.value),
+    );
+    budgetHint();
+    hideSuccess();
+    if (touched.has("budget")) validate("budget");
+    if (touched.has("interestModel")) validate("interestModel");
+    saveDraft();
+  });
   renderModels();
-});
+})();

@@ -1,164 +1,389 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore BMW models, filter the lineup and create a simple vehicle configuration.">
-  <title>BMW Explorer | Models &amp; Garage</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Explore BMW models, filter the lineup and create a simple vehicle configuration." name="description"/>
+<title>BMW Explorer | Models &amp; Garage</title>
+<script src="js/theme-init.js"></script>
+<link href="css/bootstrap.min.css" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/final.css" rel="stylesheet"/>
+<link href="css/bmw-polish.css?v=20261112" rel="stylesheet"/>
 </head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark site-navbar">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">BMW <span>EXPLORER</span></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation" aria-controls="mainNav" aria-expanded="false"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" aria-current="page" href="models.html">Models &amp; Garage</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <header class="page-hero">
-    <div class="container">
-      <p class="eyebrow"><span class="eyebrow-line"></span> THE BMW LINEUP / EXPLORE THE RANGE</p>
-      <h1>Choose your <span>next drive.</span></h1>
-      <p>From everyday sports sedans to performance-focused models and electric mobility, discover the BMW range and create a build of your own.</p>
-    </div>
-  </header>
-
-  <main>
-    <section class="models-section" id="models">
-      <div class="container">
-        <div class="section-heading-row">
-          <div><p class="eyebrow dark-eyebrow">EXPLORE THE RANGE</p><h2 class="section-title">The model <span class="accent">collection.</span></h2></div>
-          <span class="collection-count" id="collectionCount" aria-live="polite">8 MODELS</span>
-        </div>
-
-        <div class="filter-panel">
-          <div class="search-wrap"><label for="modelSearch">Search models</label><input class="form-control" type="search" id="modelSearch" placeholder="Try X5, electric, sedan..." autocomplete="off"></div>
-          <div><label for="categoryFilter">Category</label><select class="form-select" id="categoryFilter"><option value="all">All categories</option><option value="Sedan">Sedan</option><option value="SUV">SUV</option><option value="Performance">Performance</option><option value="Electric">Electric</option></select></div>
-          <div><label for="sortModels">Sort by</label><select class="form-select" id="sortModels"><option value="name">Model name</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="power">Horsepower</option></select></div>
-        </div>
-        <p class="result-summary" id="resultSummary" aria-live="polite">Showing all models</p>
-        <div class="row g-4" id="modelGrid" aria-live="polite"></div>
-        <div class="empty-state" id="emptyState" hidden><span>⌕</span><h3>No models found</h3><p>Try another search or choose a different category.</p><button class="btn btn-outline-dark" type="button" id="resetFilters">Reset filters</button></div>
-      </div>
-    </section>
-
-    <section class="compare-section" id="compare">
-      <div class="container">
-        <p class="eyebrow dark-eyebrow">SIDE BY SIDE</p>
-        <div class="section-heading-row compare-heading"><div><h2 class="section-title">Compare your <span class="accent">shortlist.</span></h2><p class="compare-intro">Choose two or three models to compare their example specifications.</p></div><span class="compare-counter" id="compareCounter" aria-live="polite">0 / 3 selected</span></div>
-        <div class="compare-picker" id="comparePicker" aria-label="Choose models to compare"></div>
-        <div class="compare-actions"><button class="btn btn-dark-blue" id="compareButton" type="button" disabled>Compare selected models <span aria-hidden="true">→</span></button><button class="btn btn-outline-secondary" id="clearCompare" type="button">Clear selection</button></div>
-        <div id="comparisonResult" class="comparison-result" aria-live="polite" hidden></div>
-      </div>
-    </section>
-
-    <section class="garage-section" id="garage">
-      <div class="container">
-        <div class="row g-5 align-items-start">
-          <div class="col-12 col-lg-5">
-            <p class="eyebrow">MAKE IT YOURS</p>
-            <h2 class="section-title text-white">The interactive <span class="gold-text">garage.</span></h2>
-            <p class="garage-intro">Choose a model, paint and package. The estimated total updates as you make changes.</p>
-            <div class="garage-preview">
-              <div class="preview-topline"><span>YOUR BUILD</span><span class="live-dot">LIVE CONFIGURATION</span></div>
-              <img class="garage-car-image" id="previewImage" src="images/model-3series.jpg" alt="Representative BMW vehicle preview">
-              <div class="preview-mark" id="previewMark">BMW</div>
-              <div class="preview-car-name" id="previewName">3 Series</div>
-              <div class="preview-spec" id="previewSpec">255 hp · Sedan</div>
-              <div class="preview-color-line"><span id="colorSwatch" class="color-swatch"></span><span id="previewColor">Alpine White</span></div>
-              <div class="preview-total-label">ESTIMATED STARTING TOTAL</div>
-              <div class="preview-total" id="configTotal" aria-live="polite">$45,000</div>
-              <p class="disclaimer">Illustrative educational estimate in USD, not an official offer or live dealer price.</p>
-            </div>
-          </div>
-          <div class="col-12 col-lg-7">
-            <div class="config-controls" id="configControls">
-              <div class="control-step"><span class="step-photo"><img src="images/model-3series.jpg" alt="BMW vehicle detail"></span><div class="w-100"><label for="configModel">Choose your model</label><select class="form-select" id="configModel"></select></div></div>
-              <div class="control-step"><span class="step-photo"><img src="images/model-m3.jpg" alt="BMW paint and body detail"></span><div class="w-100"><label for="configColor">Choose exterior colour</label><select class="form-select" id="configColor"><option value="0">Alpine White (+$0)</option><option value="750">Phytonic Blue (+$750)</option><option value="1200">Toronto Red (+$1,200)</option><option value="1500">Brooklyn Grey (+$1,500)</option></select></div></div>
-              <div class="control-step"><span class="step-photo"><img src="images/model-x5.jpg" alt="BMW front design detail"></span><div class="w-100"><label for="configPackage">Choose a package</label><select class="form-select" id="configPackage"><option value="0">Essential (+$0)</option><option value="1800">Comfort Pack (+$1,800)</option><option value="3200">Sport Pack (+$3,200)</option></select></div></div>
-              <div class="config-note"><strong>How does it work?</strong><p>Each selection changes the estimated total. This is a front-end demonstration; it does not place an order.</p></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="pricing-section" id="pricing">
-      <div class="container pricing-note-panel">
-        <p class="eyebrow dark-eyebrow">A NOTE ON THE NUMBERS</p>
-        <h2 class="section-title">Explore with <span class="accent">confidence.</span></h2>
-        <p>Model specifications and starting prices in this educational project are simplified examples for demonstrating search, comparison and price calculation. They are not official BMW specifications, current market prices or a dealer quotation.</p>
-        <a class="text-link" href="https://www.bmw.com/" target="_blank" rel="noopener noreferrer">Visit the official BMW website <span aria-hidden="true">↗</span></a>
-      </div>
-    </section>
-
-    <section class="contact-section" id="contact">
-      <div class="container">
-        <div class="row g-5">
-          <div class="col-12 col-lg-4"><p class="eyebrow dark-eyebrow">NEXT STEP</p><h2 class="section-title">Request a <span class="accent">conversation.</span></h2><p>Tell us what you are interested in. This demo validates your details locally and displays a confirmation; it does not send data to a server.</p></div>
-          <div class="col-12 col-lg-8">
-            <form class="inquiry-form" id="inquiryForm" novalidate>
-              <div class="row g-3">
-                <div class="col-12 col-md-6"><label for="fullname" class="form-label">Full name *</label><input type="text" id="fullname" name="fullname" class="form-control" placeholder="Your name" required minlength="2" autocomplete="name" aria-describedby="fullnameError" aria-invalid="false"><small class="field-error" id="fullnameError" aria-live="polite"></small></div>
-                <div class="col-12 col-md-6"><label for="email" class="form-label">Email *</label><input type="email" id="email" name="email" class="form-control" placeholder="you@example.com" required autocomplete="email" aria-describedby="emailError" aria-invalid="false"><small class="field-error" id="emailError" aria-live="polite"></small></div>
-                <div class="col-12 col-md-6"><label for="phone" class="form-label">Phone number *</label><input type="tel" id="phone" name="phone" class="form-control" placeholder="+7 700 123 4567" required autocomplete="tel" aria-describedby="phoneError" aria-invalid="false"><small class="field-error" id="phoneError" aria-live="polite"></small></div>
-                <div class="col-12 col-md-6"><label for="interestModel" class="form-label">Model of interest *</label><select id="interestModel" name="model" class="form-select" required aria-describedby="interestModelError" aria-invalid="false"><option value="">Choose a model</option></select><small class="field-error" id="interestModelError" aria-live="polite"></small></div>
-                <div class="col-12 col-md-6"><label for="budget" class="form-label">Budget in USD *</label><input type="number" id="budget" name="budget" class="form-control" placeholder="e.g. 60000" min="30000" max="300000" step="1000" required aria-describedby="budgetError" aria-invalid="false"><small class="field-error" id="budgetError" aria-live="polite"></small></div>
-                <div class="col-12 col-md-6"><label for="message" class="form-label">Message</label><input type="text" id="message" name="message" class="form-control" maxlength="400" placeholder="Optional details" aria-describedby="messageError" aria-invalid="false"><small class="field-error" id="messageError" aria-live="polite"></small></div>
-                <div class="col-12"><button type="submit" class="btn btn-gold">Validate request <span aria-hidden="true">→</span></button><p class="form-hint">* Required fields. Your unfinished details are saved in this browser
-and cleared after successful validation. Nothing is sent to a server.
-Avoid entering private details on a shared device.</p></div>
-              </div>
-              <div class="success-message" id="successMessage" role="status" aria-live="polite" hidden><strong>Request details look good!</strong><p>Your demo request has been validated successfully. No message was sent to a server.</p></div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <section id="credits" class="py-4 border-top">
-  <div class="container">
-    <h2 class="h5">Credits and resources</h2>
-
-    <p class="small">
-      Built with Bootstrap 5.3.3 and jQuery 3.7.1.
-      Typography: Inter and Playfair Display from Google Fonts.
-      ChatGPT assisted with code suggestions, debugging.
-    </p>
-
-    <p class="small mb-2">
-      Photography from Unsplash:
-      <a href="https://unsplash.com/@thylervoss">Thyler Voss</a>
-      — mountain-road BMW;
-      <a href="https://unsplash.com/photos/_4sWbzH5fp8">Josh Berquist</a>
-      — silver BMW M4;
-      <a href="https://unsplash.com/photos/ApT14-r3OH0">Erik Mclean</a>
-      — red BMW;
-      <a href="https://unsplash.com/photos/AvuK9LPk2eg">Martin Katler</a>
-      — black BMW coupe.
-    </p>
-
-    <p class="small mb-0">
-      Home background video:
-      <a href="https://pixabay.com/videos/car-vehicle-road-bmw-speed-167659/">
-        Ali_fathy on Pixabay
-      </a>.
-    </p>
-  </div>
+<body id="pageTop">
+<a class="skip-link" href="#main">Skip to content</a>
+<nav aria-label="Main navigation" class="navbar navbar-expand-lg navbar-dark site-navbar">
+<div class="container">
+<a class="navbar-brand" href="index.html">BMW <span>EXPLORER</span></a>
+<button aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#mainNav" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="mainNav">
+<ul class="navbar-nav ms-auto align-items-lg-center">
+<li class="nav-item">
+<a class="nav-link" data-nav="home" href="index.html">Home</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-nav="innovation" href="innovation.html">BMW Innovation</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-nav="models" href="models.html">Models &amp; Garage</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-nav="saved" href="saved.html">Saved cars <span class="saved-count">0</span></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-nav="faq" href="index.html#faq">FAQ</a>
+</li>
+<li class="nav-item">
+<button aria-pressed="false" class="theme-toggle" id="themeToggle" type="button">
+                Dark mode
+              </button>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<header class="page-hero">
+<div class="container">
+<p class="eyebrow">
+<span class="eyebrow-line"></span> THE BMW LINEUP / EXPLORE THE RANGE
+        </p>
+<h1>Choose your <span>next drive.</span></h1>
+<p>
+          From everyday sports sedans to performance-focused models and electric
+          mobility, discover the BMW range and create a build of your own.
+        </p>
+</div>
+</header>
+<main id="main">
+<section class="models-section" id="models">
+<div class="container">
+<div class="section-heading-row">
+<div>
+<p class="eyebrow dark-eyebrow">EXPLORE THE RANGE</p>
+<h2 class="section-title">
+                The model <span class="accent">collection.</span>
+</h2>
+</div>
+<span aria-live="polite" class="collection-count" id="collectionCount">8 MODELS</span>
+</div>
+<div class="filter-panel">
+<div class="search-wrap">
+<label for="modelSearch">Search models</label><input autocomplete="off" class="form-control" id="modelSearch" placeholder="Try X5, electric, sedan..." type="search"/>
+</div>
+<div>
+<label for="categoryFilter">Category</label><select class="form-select" id="categoryFilter">
+<option value="all">All categories</option>
+<option value="Sedan">Sedan</option>
+<option value="SUV">SUV</option>
+<option value="Performance">Performance</option>
+<option value="Electric">Electric</option>
+</select>
+</div>
+<div>
+<label for="sortModels">Sort by</label><select class="form-select" id="sortModels">
+<option value="name">Model name</option>
+<option value="price-low">Price: low to high</option>
+<option value="price-high">Price: high to low</option>
+<option value="power">Horsepower</option>
+</select>
+</div>
+</div>
+<p aria-live="polite" class="result-summary" id="resultSummary">
+            Showing all models
+          </p>
+<div aria-live="polite" class="row g-4" id="modelGrid"></div>
+<div class="empty-state" hidden="" id="emptyState">
+<span>⌕</span>
+<h3>No models found</h3>
+<p>Try another search or choose a different category.</p>
+<button class="btn btn-outline-dark" id="resetFilters" type="button">
+              Reset filters
+            </button>
+</div>
+</div>
 </section>
+<section class="compare-section" id="compare">
+<div class="container">
+<p class="eyebrow dark-eyebrow">SIDE BY SIDE</p>
+<div class="section-heading-row compare-heading">
+<div>
+<h2 class="section-title">
+                Compare your <span class="accent">shortlist.</span>
+</h2>
+<p class="compare-intro">
+                Select up to three models. Compare instantly as you choose.
+              </p>
+</div>
+<span aria-live="polite" class="compare-counter" id="compareCounter">0 / 3 selected</span>
+</div>
+<div aria-label="Choose models to compare" class="compare-picker" id="comparePicker" role="group"></div>
+<p class="compare-help" id="compareHelp">
+            Select a model to start. Results update automatically; uncheck a
+            model to remove it.
+          </p>
+<p class="field-error" id="compareError" role="alert"></p>
+<div aria-live="polite" class="comparison-result" hidden="" id="comparisonResult"></div>
+</div>
+</section>
+<section class="garage-section" id="garage">
+<div class="container">
 
-  <footer class="site-footer"><div class="container footer-inner"><a class="navbar-brand" href="index.html">BMW <span>EXPLORER</span></a><p>Independent educational project. Not an official BMW website.</p><small>© 2026 BMW Explorer · Independent student project · Ghulam Ali</small></div></footer>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/models.js"></script>
+<div class="row g-5 align-items-start">
+<div class="col-12 col-lg-5">
+<p class="eyebrow">MAKE IT YOURS</p>
+<h2 class="section-title text-white">
+                The interactive <span class="gold-text">garage.</span>
+</h2>
+<p class="garage-intro">
+                See the model in your chosen paint. Explore matching previews
+                and an illustrative estimate as you build.
+              </p>
+<div class="garage-preview">
+<div class="preview-topline">
+<span>YOUR BUILD</span><span class="live-dot">LIVE CONFIGURATION</span>
+</div>
+<img alt="BMW 3 Series paint preview" class="garage-car-image" id="previewImage" src="images/cars/3-series-0.webp"/>
+<div class="preview-mark" id="previewMark">BMW</div>
+<div class="preview-car-name" id="previewName">3 Series</div>
+<div class="preview-spec" id="previewSpec">255 hp · Sedan</div>
+<div class="preview-color-line">
+<span class="color-swatch" id="colorSwatch"></span><span id="previewColor">Alpine White</span>
+</div>
+<div class="preview-total-label">ESTIMATED STARTING TOTAL</div>
+<div aria-live="polite" class="preview-total" id="configTotal">
+                  $45,000
+                </div>
+<p class="disclaimer">
+                  Illustrative educational estimate in USD, not an official
+                  offer or live dealer price.
+                </p>
+</div>
+</div>
+<div class="col-12 col-lg-7">
+<div class="config-controls" id="configControls">
+<div class="control-step">
+<span class="step-photo"><img alt="BMW vehicle detail" src="images/model-3series.jpg"/></span>
+<div class="w-100">
+<label for="configModel">Choose your model</label><select class="form-select" id="configModel"></select>
+</div>
+</div>
+<div class="control-step">
+<span class="step-photo"><img alt="BMW paint and body detail" src="images/model-m3.jpg"/></span>
+<div class="w-100">
+<label for="configColor">Choose exterior colour</label><select class="form-select" id="configColor"></select>
+</div>
+</div>
+<div class="control-step">
+<span class="step-photo"><img alt="BMW front design detail" src="images/model-x5.jpg"/></span>
+<div class="w-100">
+<label for="configPackage">Choose a package</label><select class="form-select" id="configPackage">
+<option value="0">Essential (+$0)</option>
+<option value="1800">Comfort Pack (+$1,800)</option>
+<option value="3200">Sport Pack (+$3,200)</option>
+</select>
+</div>
+</div>
+<div aria-label="Available exterior colours" class="paint-swatches" id="paintSwatches" role="group"></div>
+<a class="btn btn-gold mt-3" href="#contact" id="buildRequest">Request this model →</a>
+<div class="config-note">
+<strong>How does it work?</strong>
+<p>
+                    Each selection changes the estimated total. This is a
+                    front-end demonstration; it does not place an order.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="pricing-section" id="pricing">
+<div class="container pricing-note-panel">
+<p class="eyebrow dark-eyebrow">A NOTE ON THE NUMBERS</p>
+<h2 class="section-title">
+            Explore with <span class="accent">confidence.</span>
+</h2>
+<p>
+            Model specifications and starting prices in this educational project
+            are simplified examples for demonstrating search, comparison and
+            price calculation. They are not official BMW specifications, current
+            market prices or a dealer quotation.
+          </p>
+<a class="text-link" href="https://www.bmw.com/" rel="noopener noreferrer" target="_blank">Visit the official BMW website <span aria-hidden="true">→</span></a>
+</div>
+</section>
+<section class="contact-section" id="contact">
+<div class="container">
+<div class="row g-5">
+<div class="col-12 col-lg-4">
+<p class="eyebrow dark-eyebrow">NEXT STEP</p>
+<h2 class="section-title">
+                Request a <span class="accent">conversation.</span>
+</h2>
+<p>
+                Tell us what you are interested in. This demo validates your
+                details locally and displays a confirmation; it does not send
+                data to a server.
+              </p>
+</div>
+<div class="col-12 col-lg-8">
+<form class="inquiry-form" id="inquiryForm" novalidate="">
+<div class="row g-3">
+<div class="col-12 col-md-6">
+<label class="form-label" for="fullname">Full name *</label><input aria-describedby="fullnameError" aria-invalid="false" autocomplete="name" class="form-control" id="fullname" maxlength="80" minlength="2" name="fullname" placeholder="Your name" required="" type="text"/><small aria-live="polite" class="field-error" id="fullnameError"></small>
+</div>
+<div class="col-12 col-md-6">
+<label class="form-label" for="email">Email *</label><input aria-describedby="emailError" aria-invalid="false" autocomplete="email" class="form-control" id="email" name="email" placeholder="you@example.com" required="" type="email"/><small aria-live="polite" class="field-error" id="emailError"></small>
+</div>
+<div class="col-12 col-md-6">
+<label class="form-label" for="countryCode">Country calling code *</label><select aria-describedby="countryCodeError" autocomplete="tel-country-code" class="form-select mb-2" id="countryCode" required="">
+<option value="">Select country code</option>
+<option value="+7">Kazakhstan / Russia (+7)</option>
+<option value="+93">Afghanistan (+93)</option>
+<option value="+98">Iran (+98)</option>
+<option value="+1">US / Canada (+1)</option>
+<option value="+44">United Kingdom (+44)</option>
+<option value="+49">Germany (+49)</option>
+<option value="+33">France (+33)</option>
+<option value="+90">Türkiye (+90)</option>
+<option value="+971">UAE (+971)</option>
+<option value="+91">India (+91)</option>
+<option value="+92">Pakistan (+92)</option>
+<option value="+86">China (+86)</option>
+<option value="+61">Australia (+61)</option>
+<option value="other">Other country</option>
+</select>
+<div hidden="" id="customCodeWrap">
+<label class="form-label" for="customCode">Your calling code *</label><input aria-describedby="countryCodeError" class="form-control" id="customCode" inputmode="tel" maxlength="4" placeholder="e.g. +81" type="tel"/>
+</div>
+<small aria-live="polite" class="field-error" id="countryCodeError"></small><label class="form-label" for="phone">National phone number *</label><input aria-describedby="phoneError" aria-invalid="false" autocomplete="off" class="form-control" id="phone" inputmode="numeric" maxlength="20" name="phone" placeholder="e.g. 700 123 4567" required="" type="tel"/><small aria-live="polite" class="field-error" id="phoneError"></small>
+</div>
+<div class="col-12 col-md-6">
+<label class="form-label" for="interestModel">Model of interest *</label><select aria-describedby="interestModelError" aria-invalid="false" class="form-select" id="interestModel" name="model" required="">
+<option value="">Choose a model</option></select><small aria-live="polite" class="field-error" id="interestModelError"></small>
+</div>
+<div class="col-12 col-md-6">
+<label class="form-label" for="budget">Budget in USD *</label><input aria-describedby="budgetHint budgetError" aria-invalid="false" class="form-control" id="budget" inputmode="decimal" maxlength="12" name="budget" placeholder="e.g. 60000" required="" type="text"/><small class="form-text" id="budgetHint">Choose a model to see its minimum starting budget.</small><small aria-live="polite" class="field-error" id="budgetError"></small>
+</div>
+<div class="col-12 col-md-6">
+<label class="form-label" for="message">Message</label><textarea aria-describedby="messageError" class="form-control" id="message" maxlength="400" name="message" placeholder="What would you like to know?" rows="3"></textarea><small aria-live="polite" class="field-error" id="messageError"></small>
+</div>
+<div class="col-12">
+<button class="btn btn-gold" type="submit">
+                      Validate request <span aria-hidden="true">→</span></button><button class="btn btn-outline-secondary ms-2" id="clearDraft" type="button">
+                      Clear draft
+                    </button>
+<p class="form-hint">
+                      * Required fields. Your unfinished form stays in this
+                      browser until you validate it or clear the draft. Nothing
+                      is sent to a dealer. Avoid private details on shared
+                      devices.
+                    </p>
+</div>
+</div>
+<div aria-live="polite" class="success-message" hidden="" id="successMessage" role="status">
+<strong>Request details look good!</strong>
+<p>
+                    Your demo request has been validated successfully. No
+                    message was sent to a server.
+                  </p>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-top">
+<div>
+<a class="navbar-brand" href="index.html">BMW <span>EXPLORER</span></a>
+<p>A little curiosity.<br/>A drive that feels like you.</p>
+</div>
+<div class="footer-links">
+<a href="innovation.html">BMW Innovation</a><a href="models.html">Explore models</a><a href="models.html#garage">Build your car</a><a href="saved.html">Your saved cars</a><a href="models.html#contact">Request a conversation</a>
+</div>
+<div class="footer-note">
+<p>
+              Independent educational project.<br/>Not affiliated with BMW.
+            </p>
+<p>
+              Illustrative prices. No orders or messages are sent to a dealer.
+            </p>
+<a href="#pageTop">Back to top ↑</a>
+</div>
+</div>
+<details class="footer-credits" id="credits">
+<summary>Credits &amp; sources</summary>
+<div class="credits-content">
+<h2 class="visually-hidden">Sources and acknowledgements</h2>
+<h3>Code and typography</h3>
+<ul>
+<li>
+<a href="https://getbootstrap.com/docs/5.3/">Bootstrap 5.3.3</a>: responsive grid, navigation and form components.
+              </li>
+<li>
+<a href="https://jquery.com/">jQuery 3.7.1</a>: FAQ slide
+                effects, catalogue fades and smooth scrolling.
+              </li>
+<li>
+<a href="https://fonts.google.com/">Google Fonts</a>: Inter and
+                Playfair Display.
+              </li>
+
+</ul>
+<h3>BMW model and colour previews</h3>
+<p>
+              Model and paint images © BMW AG, sourced from the official BMW
+              Middle East model pages linked below. Local WebP copies are used
+              for educational demonstration. Paint availability and vehicle
+              equipment vary by market and model year. These images are not
+              claimed as original work.
+            </p>
+<ul class="footer-model-sources"></ul>
+<h3>Editorial photographs and video</h3>
+<ul>
+<li>
+<a href="https://unsplash.com/@thylervoss">Thyler Voss / Unsplash</a>: mountain-road BMW photograph. This is the photographer
+                profile; the exact original photo URL remains unconfirmed.
+              </li>
+<li>
+<a href="https://unsplash.com/photos/_4sWbzH5fp8">Josh Berquist / Unsplash</a>: silver BMW M4.
+              </li>
+<li>
+<a href="https://unsplash.com/photos/ApT14-r3OH0">Erik Mclean / Unsplash</a>: red BMW.
+              </li>
+<li>
+<a href="https://unsplash.com/photos/AvuK9LPk2eg">Martin Katler / Unsplash</a>: black BMW coupe.
+              </li>
+<li>
+<a href="https://pixabay.com/videos/car-vehicle-road-bmw-speed-167659/">Ali_fathy / Pixabay</a>: home-page driving video.
+              </li>
+</ul>
+
+<p>
+<a href="https://github.com/G-Shafei2004/Midterm-Project">Project repository</a>
+              ·
+              <a href="https://g-shafei2004.github.io/Midterm-Project/">GitHub Pages</a>
+</p>
+</div>
+</details>
+<div class="footer-bottom">
+<small>© 2026 · Ghulam Ali Shafei</small><span>Made for the joy of exploring.</span>
+</div>
+</div>
+</footer>
+<div aria-live="polite" class="site-status" id="siteStatus" role="status"></div>
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/vendor/bootstrap.bundle.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js?v=configure-fix-20261113"></script>
+<script src="js/models.js?v=configure-fix-20261113"></script>
+<script src="js/experience.js"></script>
 </body>
 </html>

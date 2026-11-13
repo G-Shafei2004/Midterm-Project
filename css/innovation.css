@@ -1,0 +1,68 @@
+/* BMW Innovation page — original interactive technology explorer. */
+.innovation-hero { padding:clamp(56px,7vw,100px) 0; background:#081827; color:#f2f6fa; }
+.innovation-hero-inner{display:grid;grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);gap:clamp(26px,5vw,75px);align-items:center;}
+.innovation-hero-copy h1{font-size:clamp(2.8rem,5.5vw,5.5rem);font-weight:800;line-height:1.08;margin:15px 0 24px;color:#f2f6fa;}
+.innovation-hero-copy h1 .accent{color:#7bc8ff!important;}
+.innovation-hero-copy>p:not(.eyebrow){color:#c9dbe8;font-size:1.05rem;line-height:1.75;max-width:560px;margin-bottom:30px;}
+.innovation-hero-image{position:relative;border-radius:18px;overflow:hidden;border:1px solid #ffffff30;background:#122942;box-shadow:0 22px 65px #0003;}
+.innovation-hero-image img{width:100%;height:auto;display:block;aspect-ratio:16/10;object-fit:cover;}
+.innovation-photo-label{position:absolute;bottom:0;left:0;right:0;padding:25px;color:#fff;background:linear-gradient(transparent,#061320dc);font-size:.76rem;font-weight:700;letter-spacing:.08em;}
+.innovation-explore{padding:clamp(60px,7vw,100px) 0;background:var(--paper);color:var(--ink)}
+.innovation-explore .section-title{margin-bottom:14px}.innovation-intro{color:var(--muted);max-width:690px;margin-bottom:30px}
+.innovation-layout{display:grid;grid-template-columns:minmax(260px,.74fr) minmax(0,1.26fr);gap:22px;align-items:stretch}
+.innovation-options{display:flex;flex-direction:column;gap:12px}
+.innovation-option{display:flex;gap:17px;align-items:center;text-align:left;width:100%;min-height:97px;padding:19px 23px;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);cursor:pointer;transition:border-color .18s,box-shadow .18s,transform .18s}
+.innovation-option:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 10px 30px #17365414}
+.innovation-option.active{background:var(--selected);border-color:var(--blue);box-shadow:inset 4px 0 var(--blue)}
+.innovation-option-number{font-weight:800;font-size:.74rem;color:var(--blue-dark);flex:0 0 23px}
+.innovation-option>span:nth-child(2){flex:1;display:flex;flex-direction:column;gap:3px}.innovation-option strong{font-size:.99rem}.innovation-option small{font-size:.75rem;color:var(--muted)}
+.innovation-display{border:1px solid var(--line);border-radius:19px;overflow:hidden;background:var(--surface);padding:clamp(22px,4vw,43px);box-shadow:0 16px 38px #081a2a0b;}
+.innovation-display-head{display:flex;justify-content:space-between;gap:12px;color:var(--blue-dark);font-weight:800;letter-spacing:.13em;font-size:.69rem}
+.innovation-live{color:var(--muted)}
+.innovation-display h3{font-weight:800;font-size:clamp(1.4rem,2.5vw,2rem);margin:0 0 14px;color:var(--ink)}
+.innovation-display p{color:var(--muted);line-height:1.8}.innovation-display ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;padding:0;list-style:none;margin:20px 0 0}
+.innovation-display li{background:var(--surface-soft);padding:11px;border:1px solid var(--line);font-size:.74rem;font-weight:650;border-radius:8px}
+.innovation-display .innovation-disclaimer{font-size:.72rem;margin:18px 0 0}
+.innovation-story{padding:85px 0;background:var(--surface-soft)}.innovation-story-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:center;gap:clamp(30px,6vw,95px)}
+.innovation-story-grid p:not(.eyebrow){line-height:1.85;color:var(--muted)}.innovation-story-grid img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border-radius:17px;box-shadow:0 18px 37px #071a2d19}
+.innovation-cta{text-align:center;background:#0a2137;color:#eef7ff;padding:68px 0}.innovation-cta h2{font-size:clamp(1.8rem,3.8vw,3rem);color:#fff}.innovation-cta p{color:#bfd4e3;margin:16px auto 26px;max-width:650px}
+@media(max-width:900px){.innovation-hero-inner,.innovation-layout,.innovation-story-grid{grid-template-columns:1fr}.innovation-hero-image img{aspect-ratio:16/8}.innovation-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.innovation-options{grid-template-columns:1fr}.innovation-display-head{font-size:.6rem}.innovation-display ul{grid-template-columns:1fr}.innovation-hero-image img{aspect-ratio:4/3}.innovation-story{padding:60px 0}}
+@media(prefers-reduced-motion:reduce){.innovation-option{transition:none}}
+
+/* BMW Innovation: photographic topic stories instead of a generic dashboard graphic. */
+.innovation-photo-stage{position:relative;border-radius:14px;overflow:hidden;margin:20px 0 25px;border:1px solid var(--line);background:#132c43;min-width:0}
+.innovation-photo-stage>img{display:block;width:100%;height:270px;object-fit:cover;object-position:center;background:#e7eef4;transition:filter .22s ease}
+.innovation-photo-stage figcaption{position:absolute;bottom:0;left:0;right:0;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:32px 18px 13px;color:#fff;background:linear-gradient(transparent,#061729e8);font-size:.76rem;font-weight:750}
+.innovation-photo-stage figcaption small{color:#c5d9ea;font-size:.64rem;font-weight:500;max-width:280px}
+.innovation-related{margin-top:20px;padding:18px;background:var(--surface-soft);border:1px solid var(--line);border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.innovation-related>span{color:var(--muted);font-size:.64rem;font-weight:800;letter-spacing:.09em}
+.innovation-related a{color:var(--blue-dark);font-weight:800;text-decoration:none}.innovation-related a:hover{text-decoration:underline}
+.innovation-display{min-width:0}
+@media(max-width:560px){.innovation-photo-stage>img{height:205px}.innovation-photo-stage figcaption{align-items:flex-start;flex-direction:column;gap:4px;padding:30px 12px 10px}.innovation-related{align-items:flex-start;flex-direction:column}}
+
+/* Final usability fix: preserve the entire vehicle rather than cropping it.
+   Place the descriptive caption below the photo, never across its wheels. */
+.innovation-photo-stage { background: var(--surface-soft); }
+.innovation-photo-stage > img {
+  height: clamp(215px, 25vw, 310px);
+  object-fit: contain;
+  object-position: center;
+  background: #e7eef4;
+}
+.innovation-photo-stage figcaption {
+  position: static;
+  display: flex;
+  gap: 8px 18px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 13px 17px;
+  background: var(--surface-soft);
+  color: var(--ink);
+  border-top: 1px solid var(--line);
+}
+.innovation-photo-stage figcaption small { color: var(--muted); max-width: 350px; }
+@media(max-width:560px) {
+  .innovation-photo-stage > img { height: 215px; object-fit: contain; }
+  .innovation-photo-stage figcaption { padding: 12px; align-items: flex-start; }
+}
