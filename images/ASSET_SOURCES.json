@@ -1,0 +1,298 @@
+{
+  "3-series": {
+    "source": "https://www.bmw-me.com/en/all-models/3-series/bmw-3-series-sedan/bmw-3-series-sedan.html",
+    "colors": [
+      {
+        "name": "Mineral White metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331c9Nv2Z7d5yKlHS94mvhD%25VibdFWPJjuMwRXTWv6OQul6JaK1JgXRaXhG%256Q5nHnzQhw8rtK4ew178z8YntECUkdQF7slGAzjJCrXpFkszlZQ6KAnkXRaYWFOMQ5nmP%25eIagOybfKjnvIT91lrO2B3iEXMIjedwsj3BDMztIa5eqhk7BnDMLoACeLvhJHFlM2oou%25KXh5IHSfWQopq%25V1PaHcsfNEbn%257M10s9OfRzE4riI1qEscZwBQv4rxRteaxNZ857MnHvRUgChOYC5GvloImGgp2XHBR4v6jQ%25JE82YDafuiAjmqn1SwtDyLOEVSBqTJIsN8WL3uBr0WBJdSeZW4muzVMRPsSSkNh5byyVA0og9QNNF4Hvi5n0KEmrng3OYgM2SIRcPr8O30kxbZcDpxN8snhPcv6Ovu91MhVo7VpemhNF1bOayjn65ef%25dd4WsDnTNumQhtE61IXQa7GqPx%25aMpygDAM3aJzMxQUdqfY63WptvmdoTn65eyV9eXYCjTZHpzZglO30GibHZk4buzH7Qj9vQFji9kE47DoDXYuTNF1TLdNZnMkJEcGqTMuAvHWpfZnxYR%25P9i",
+        "image": "images/cars/3-series-0.webp",
+        "id": "0",
+        "cost": 0,
+        "hex": "#eef0ed"
+      },
+      {
+        "name": "Arctic Race Blue metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331c9Nv2Z7d5yKlHS94mvhD%25VibdFWPJjuMwRXTWv6OQul6JaKDBVXRaXhG%256Q5nHnzQhw8rtK4ew178z8YntECUkdQF7slGAzjJCrXpFkszlZQ6KAnkXRaYWFOMQ5nmP%25eIagOybfKjnvIT91lrO2B3iEXMIjedwsj3BDMztIa5eqhk7BnDMLoACeLvhJHFlM2oou%25KXh5IHSfWQopq%25V1PaHcsfNEbn%257M10s9OfRzE4riI1qEscZwBQv4rxRteaxNZ857MnHvRUgChOYC5GvloImGgp2XHBR4v6jQ%25JE82YDafuiAjmqn1SwtDyLOEVSBqTJIsN8WL3uBr0WBJdSeZW4muzVMRPsSSkNh5byyVA0og9QNNF4Hvi5n0KEmrng3OYgM2SIRcPr8O30kxbZcDpxN8snhPcv6Ovu91MhVo7VpemhNF1bOayjn65ef%25dd4WsDnTNumQhtE61IXQa7GqPx%25aMpygDAM3aJzMxQUdqfY63WptvmdoTn65eyVOzoYCjTZHpzZglO30GibHZk4buzH7Qj9vQFji9kE47DoDXYuTNF1TLdNZnMkJEcGqTMuAvHWpfZnxYR%25P9i",
+        "image": "images/cars/3-series-1.webp",
+        "id": "1",
+        "cost": 750,
+        "hex": "#27588b"
+      },
+      {
+        "name": "M Brooklyn Grey metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331c9Nv2Z7d5yKlHS94mvhD%25VibdFWPJjuMwRXTWv6OQul6JaKDB4XRaXhG%256Q5nHnzQhw8rtK4ew178z8YntECUkdQF7slGAzjJCrXpFkszlZQ6KAnkXRaYWFOMQ5nmP%25eIagOybfKjnvIT91lrO2B3iEXMIjedwsj3BDMztIa5eqhk7BnDMLoACeLvhJHFlM2oou%25KXh5IHSfWQopq%25V1PaHcsfNEbn%257M10s9OfRzE4riI1qEscZwBQv4rxRteaxNZ857MnHvRUgChOYC5GvloImGgp2XHBR4v6jQ%25JE82YDafuiAjmqn1SwtDyLOEVSBqTJIsN8WL3uBr0WBJdSeZW4muzVMRPsSSkNh5byyVA0og9QNNF4Hvi5n0KEmrng3OYgM2SIRcPr8O30kxbZcDpxN8snhPcv6Ovu91MhVo7VpemhNF1bOayjn65ef%25dd4WsDnTNumQhtE61IXQa7GqPx%25aMpygDAM3aJzMxQUdqfY63WptvmdoTn65eyVOzfYCjTZHpzZglO30GibHZk4buzH7Qj9vQFji9kE47DoDXYuTNF1TLdNZnMkJEcGqTMuAvHWpfZnxYR%25P9i",
+        "image": "images/cars/3-series-2.webp",
+        "id": "2",
+        "cost": 1200,
+        "hex": "#858c96"
+      },
+      {
+        "name": "Black Sapphire metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331c9Nv2Z7d5yKlHS94mvhD%25VibdFWPJjuMwRXTWv6OQul6JaKCNXXRaXhG%256Q5nHnzQhw8rtK4ew178z8YntECUkdQF7slGAzjJCrXpFkszlZQ6KAnkXRaYWFOMQ5nmP%25eIagOybfKjnvIT91lrO2B3iEXMIjedwsj3BDMztIa5eqhk7BnDMLoACeLvhJHFlM2oou%25KXh5IHSfWQopq%25V1PaHcsfNEbn%257M10s9OfRzE4riI1qEscZwBQv4rxRteaxNZ857MnHvRUgChOYC5GvloImGgp2XHBR4v6jQ%25JE82YDafuiAjmqn1SwtDyLOEVSBqTJIsN8WL3uBr0WBJdSeZW4muzVMRPsSSkNh5byyVA0og9QNNF4Hvi5n0KEmrng3OYgM2SIRcPr8O30kxbZcDpxN8snhPcv6Ovu91MhVo7VpemhNF1bOayjn65ef%25dd4WsDnTNumQhtE61IXQa7GqPx%25aMpygDAM3aJzMxQUdqfY63WptvmdoTn65eyVpHYYCjTZHpzZglO30GibHZk4buzH7Qj9vQFji9kE47DoDXYuTNF1TLdNZnMkJEcGqTMuAvHWpfZnxYR%25P9i",
+        "image": "images/cars/3-series-3.webp",
+        "id": "3",
+        "cost": 1500,
+        "hex": "#20242a"
+      }
+    ]
+  },
+  "5-series": {
+    "source": "https://www.bmw-me.com/en/all-models/5-series/sedan/bmw-5-series-sedan-overview.html",
+    "colors": [
+      {
+        "name": "Alpine White solid",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331S%25NrnF94fX5jHS9gBgtUD6JdoecId4MwsHRBDMBiNeReqhk7ZRtMLoACeLghJHFl5eyou%25KXgoFHSfWQlue%25V1Pa7cUfNEbnCHq10s9Oa6TE4riInRascZwBLvSrxRtesfcZ857Mn66RUgChDYF5GvlovUKgp2XHLqav6jQ%25J0q2YDafu9Ujmqn1SdiDyLOEVtpqTJIs8fzL3uBrUD7JdSeZ4lXuzVMRVdkSkNh5u2iVA0ogSTNNF4HvVYL0Kc%252Nlz4WxfjTifcP81D4WWxbUEqioe89GsLsM8UiprJ8D7Gw6ZuUcWptYRSDtb67mFmD6kc1ixuHdcPrqO30Syao7sYEBQanCpLb8fnh6TvqFhdnueswTCzOSnjXWPkJEF%255SYCjKq%25SbfFSrNG1JyXq3B4lxTjHpGyFUi56TMmQGZIYuATWptvM%25cO0%25lcIO7qTMJw8jpL3hL4CRf1xEaxjl8k89Rxq680UrOobx2YI3w9cEiNHCOnUUDyeI7QnO68YgMIfwmcPrUtV5lkvL%25TFJgXan",
+        "image": "images/cars/5-series-0.webp",
+        "id": "0",
+        "cost": 0,
+        "hex": "#eef0ed"
+      },
+      {
+        "name": "Tanzanite Blue metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331S%25NrnF94fX5jHS9gBgtUD6JdoecId4MwVjOBDMBiNeReqhk7ZRtMLoACeLghJHFl5eyou%25KXgoFHSfWQlue%25V1Pa7cUfNEbnCHq10s9Oa6TE4riInRascZwBLvSrxRtesfcZ857Mn66RUgChDYF5GvlovUKgp2XHLqav6jQ%25J0q2YDafu9Ujmqn1SdiDyLOEVtpqTJIs8fzL3uBrUD7JdSeZ4lXuzVMRVdkSkNh5u2iVA0ogSTNNF4HvVYL0Kc%252Nlz4WxfjTifcP81D4WWxbUEqioe89GsLsM8UiprJ8D7Gw6ZuUcWptYRSDtb67mFmD6kc1ixuHdcPrqO30Syao7sYEBQanCpLb8fnh6TvqFhdnueswTCzOSnjXWPkJEF%255SYCjKq%25SbfFSrNG1JyXq3B4lxTjHpGyFUi56TMmQGZIYuawUptvM%25cO0%25lcIO7qTMJw8jpL3hL4CRf1xEaxjl8k89Rxq680UrOobx2YI3w9cEiNHCOnUUDyeI7QnO68YgMIfwmcPrUtV5lkvL%25TFJgXan",
+        "image": "images/cars/5-series-1.webp",
+        "id": "1",
+        "cost": 750,
+        "hex": "#27588b"
+      },
+      {
+        "name": "M Brooklyn Grey metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331S%25NrnF94fX5jHS9gBgtUD6JdoecId4MwV%25pBDMBiNeReqhk7ZRtMLoACeLghJHFl5eyou%25KXgoFHSfWQlue%25V1Pa7cUfNEbnCHq10s9Oa6TE4riInRascZwBLvSrxRtesfcZ857Mn66RUgChDYF5GvlovUKgp2XHLqav6jQ%25J0q2YDafu9Ujmqn1SdiDyLOEVtpqTJIs8fzL3uBrUD7JdSeZ4lXuzVMRVdkSkNh5u2iVA0ogSTNNF4HvVYL0Kc%252Nlz4WxfjTifcP81D4WWxbUEqioe89GsLsM8UiprJ8D7Gw6ZuUcWptYRSDtb67mFmD6kc1ixuHdcPrqO30Syao7sYEBQanCpLb8fnh6TvqFhdnueswTCzOSnjXWPkJEF%255SYCjKq%25SbfFSrNG1JyXq3B4lxTjHpGyFUi56TMmQGZIYua3HptvM%25cO0%25lcIO7qTMJw8jpL3hL4CRf1xEaxjl8k89Rxq680UrOobx2YI3w9cEiNHCOnUUDyeI7QnO68YgMIfwmcPrUtV5lkvL%25TFJgXan",
+        "image": "images/cars/5-series-2.webp",
+        "id": "2",
+        "cost": 1200,
+        "hex": "#858c96"
+      },
+      {
+        "name": "Black Sapphire metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331S%25NrnF94fX5jHS9gBgtUD6JdoecId4MwOUBBDMBiNeReqhk7ZRtMLoACeLghJHFl5eyou%25KXgoFHSfWQlue%25V1Pa7cUfNEbnCHq10s9Oa6TE4riInRascZwBLvSrxRtesfcZ857Mn66RUgChDYF5GvlovUKgp2XHLqav6jQ%25J0q2YDafu9Ujmqn1SdiDyLOEVtpqTJIs8fzL3uBrUD7JdSeZ4lXuzVMRVdkSkNh5u2iVA0ogSTNNF4HvVYL0Kc%252Nlz4WxfjTifcP81D4WWxbUEqioe89GsLsM8UiprJ8D7Gw6ZuUcWptYRSDtb67mFmD6kc1ixuHdcPrqO30Syao7sYEBQanCpLb8fnh6TvqFhdnueswTCzOSnjXWPkJEF%255SYCjKq%25SbfFSrNG1JyXq3B4lxTjHpGyFUi56TMmQGZIYuUhpptvM%25cO0%25lcIO7qTMJw8jpL3hL4CRf1xEaxjl8k89Rxq680UrOobx2YI3w9cEiNHCOnUUDyeI7QnO68YgMIfwmcPrUtV5lkvL%25TFJgXan",
+        "image": "images/cars/5-series-3.webp",
+        "id": "3",
+        "cost": 1500,
+        "hex": "#20242a"
+      }
+    ]
+  },
+  "7-series": {
+    "source": "https://www.bmw-me.com/en/all-models/7-series/7-series-sedan/7-series-sedan-2025-g70.html",
+    "colors": [
+      {
+        "name": "dual-finish Frozen Tanzanite Blue III metallic with Tanzanite Blue II metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-73315jAvmZ7dgMfP8RUQoFSr56kxbZ35BjkeTjHq0MvUi5pXJ9SGZI40UTNF1bOayjn65ef%25dd4WsxnTNzcPrUHO06H1b7GqNAzSHXLvv6OgHqvZ2aKwpgMLWVpRBvhJPpyOxayVO8xuw1pfOlXQtUDWcHQeGm5jkeTQLwp7TVsgl6JzKGwgRHErZbF9cv3LNdkIVtyt4fXsnvzBLlFSrTfmBFTjO3gpnG7xqLvQFjz9nE47EvkeQajnWj%251zmDyeONayVIb7UgnvInP9LvO2B3i3S8IjedwdVUBDMzti08eqhk7wHlMLoACtl%25hJHFl5Efou%25KXgysHSfWQvTy%25V1Pa2oQfNEbnjHq10s9Of5bE4riI1a8scZwBEhmrxRtesoNZ857MrNkRUgChZn55GvloROlgp2XH5q9v6jQ%25eQh2YDafMgijmqn1SrGDyLOEV2qqTJIsNAgL3uBr0FLJdSeZ40FuzVMRPzDSkNh5FJrVA0ogdUlNF4HvzDX0Kc%252k1Q4WxfjyzacP81DTInxbU3U5xyShKVjBY",
+        "image": "images/cars/7-series-0.webp",
+        "id": "0",
+        "cost": 0,
+        "hex": "#27588b"
+      },
+      {
+        "name": "two-tone Oxide Grey II metallic with Sapphire Black metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-73315jAvmZ7dgMfPIRUQoFSr56kxbZ35BjkeTjHq0MvUi5pXJ9SGZI40UTNF1bOayjn65ef%25dd4WsxnTNzcPrUHO06H1b7GqNAzSHXLvv6OgHqvZ2aKwpgMLWVpRBvhJPpyOxayVO8xuw1pfOlXQtUDWcHQeGm5jkeTQLwp7TVsgl6JzKGwgRHErZbF9cv3LNdkIVtyt4fXsnvzBLlFSrTfmBFTjO3gpnG7xqLvQFjz9nE47EvkeQajnWj%251zmDyeONayVIb7UKnvInP9LvO2B3i3S8IjedwdVUBDMzti08eqhk7wHlMLoACtl%25hJHFl5Efou%25KXgysHSfWQvTy%25V1Pa2oQfNEbnjHq10s9Of5bE4riI1a8scZwBEhmrxRtesoNZ857MrNkRUgChZn55GvloROlgp2XH5q9v6jQ%25eQh2YDafMgijmqn1SrGDyLOEV2qqTJIsNAgL3uBr0FLJdSeZ40FuzVMRPzDSkNh5FJrVA0ogdUlNF4HvzDX0Kc%252k1Q4WxfjyzacP81DTInxbU3U5xyShKVjBY",
+        "image": "images/cars/7-series-1.webp",
+        "id": "1",
+        "cost": 750,
+        "hex": "#20242a"
+      },
+      {
+        "name": "Frozen Space Silver metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-73315jAvmZ7dgMyFKRUQoFSr56kxbZ35BjkeTjHq0MvUi5pXJ9SGZI40UTNF1bOayjn65ef%25dd4WsxnTNzcPrUHO06H1b7GqNAzSHXLvv6OgHqvZ2aKwpgMLWVpRBvhJPpyOxayVO8xuw1pfOlXQtUDWcHQeGm5jkeTQLwp7TVsgl6JzKGwgRHErZbF9cv3LNdkIVtyt4fXsnvzBLlFSrTfmBFTjO3gpnG7xqLvQFjz9nE47EvkeQajnWj%251zmDyeONayVIbJcxnvInP9LvO2B3i3S8IjedwdVUBDMzti08eqhk7wHlMLoACtl%25hJHFl5Efou%25KXgysHSfWQvTy%25V1Pa2oQfNEbnjHq10s9Of5bE4riI1a8scZwBEhmrxRtesoNZ857MrNkRUgChZn55GvloROlgp2XH5q9v6jQ%25eQh2YDafMgijmqn1SrGDyLOEV2qqTJIsNAgL3uBr0FLJdSeZ40FuzVMRPzDSkNh5FJrVA0ogdUlNF4HvzDX0Kc%252k1Q4WxfjyzacP81DTInxbU3U5xyShKVjBY",
+        "image": "images/cars/7-series-2.webp",
+        "id": "2",
+        "cost": 1200,
+        "hex": "#858c96"
+      },
+      {
+        "name": "Vancouver Green metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-73315jAvmZ7dgMyJ0RUQoFSr56kxbZ35BjkeTjHq0MvUi5pXJ9SGZI40UTNF1bOayjn65ef%25dd4WsxnTNzcPrUHO06H1b7GqNAzSHXLvv6OgHqvZ2aKwpgMLWVpRBvhJPpyOxayVO8xuw1pfOlXQtUDWcHQeGm5jkeTQLwp7TVsgl6JzKGwgRHErZbF9cv3LNdkIVtyt4fXsnvzBLlFSrTfmBFTjO3gpnG7xqLvQFjz9nE47EvkeQajnWj%251zmDyeONayVIbJ%25rnvInP9LvO2B3i3S8IjedwdVUBDMzti08eqhk7wHlMLoACtl%25hJHFl5Efou%25KXgysHSfWQvTy%25V1Pa2oQfNEbnjHq10s9Of5bE4riI1a8scZwBEhmrxRtesoNZ857MrNkRUgChZn55GvloROlgp2XH5q9v6jQ%25eQh2YDafMgijmqn1SrGDyLOEV2qqTJIsNAgL3uBr0FLJdSeZ40FuzVMRPzDSkNh5FJrVA0ogdUlNF4HvzDX0Kc%252k1Q4WxfjyzacP81DTInxbU3U5xyShKVjBY",
+        "image": "images/cars/7-series-3.webp",
+        "id": "3",
+        "cost": 1500,
+        "hex": "#396354"
+      }
+    ]
+  },
+  "x3": {
+    "source": "https://www.bmw-me.com/en/all-models/x-series/x3/bmw-x3.html",
+    "colors": [
+      {
+        "name": "Alpine White solid",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331pkJEVZ8XgiAsji7UmvhE0VAiDoMIjAeSw27BzcQXI%25lZyY4Up6EHswTHA5mhJPH65e2oub0TmvayRCzPWDD%25Viny2oegYA89RbfKYmUrOpQhRVAfoUMA8HCR1vhJHhZR%25mou%25KXKy7HSfWQWTe%25V1PaP3%25fNEbnbHT10s9Oao6E4riIn4uscZwBO24rxRteIcfZ857MBvIRUgChe2L5GvloVqjgp2XHNrcv6jQ%250Zq2YDaf4YQjmqn1cvtDyLOExhDqTJIs8egL3uBrq0VJdSeZLEbuzVMRJseSkNh5uqzVA0ogSAaNF4HvVFf0Kc%252NK14Wxfj0yucP81D4TWxbUEqcaF89GsLxCTUiprJ8l3Gw6ZuU2eptYRSGTp67m5VpK6YCygNLCimlTv0JACyX324u8zTQdjcSIM3azDxVBrdnkq8NZEzOALU03CkIFJGbYQABKup97IFeWS6iHdKMPVYw%25gWhbNmtw4Po90y7ZvbHi4TCnR9%25wc3ZlMiftxdRyMw178z5hhtECUkgu77slGAvzVCrXpF2azlZQ6KQIiXRaYWa9wQ5nmPn4UagOybOWKnvIT9IJ4O2B3iBtVIjedwe7YBDMztMjUeqhk7h0kMLoACu1nhJHFlSIoou%25KXVGIHSfWQN4r%25V1Pa0cZfNEbn4VM10s9OcNZE4riIx03scZwB84nrxRteL5FZ8XgDF2yRCzvhSD05GaFbEdfbYEzdpBDFBfpCb9EiyEjDZkscCuHVsaAb0%25lR2oubf4Bw8j7aA5qntUp6xbZ35BjkeTjHq0MvUi58LYU4GZIH98jmB4R4hFUP672tAT3dYgMxZidWvqneNW",
+        "image": "images/cars/x3-0.webp",
+        "id": "0",
+        "cost": 0,
+        "hex": "#eef0ed"
+      },
+      {
+        "name": "Arctic Race Blue metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331pkJEVZ8XgiAsji7UmvhE0VAiDoMIjAeSw27BzcQXI%25lZyY4Up6EHswTHA5mhJPH65e2oub0TmvayRCzPWDD%25Viny2oegYA89RbfKYmUrOpQhRVAfoUMA8HC4EphJHhZR%25mou%25KXKy7HSfWQWTe%25V1PaP3%25fNEbnbHT10s9Oao6E4riIn4uscZwBO24rxRteIcfZ857MBvIRUgChe2L5GvloVqjgp2XHNrcv6jQ%250Zq2YDaf4YQjmqn1cvtDyLOExhDqTJIs8egL3uBrq0VJdSeZLEbuzVMRJseSkNh5uqzVA0ogSAaNF4HvVFf0Kc%252NK14Wxfj0yucP81D4TWxbUEqcaF89GsLxCTUiprJ8l3Gw6ZuU2eptYRSGTp67m5VpK6YCygNLCimlTv0JACyX324u8zTQdjcSIM3azDxVBrdnkq8NZEzOALU03CkIFJGbYQABKup97IFeWS6iHdKMPVYw%25gWhbNmtw4Po90y7ZvbHi4TCnR9%25wc3ZlMiftxdRyMw178z5hhtECUkgu77slGAvzVCrXpF2azlZQ6KQIiXRaYWa9wQ5nmPn4UagOybOWKnvIT9IJ4O2B3iBtVIjedwe7YBDMztMjUeqhk7h0kMLoACu1nhJHFlSIoou%25KXVGIHSfWQN4r%25V1Pa0cZfNEbn4VM10s9OcNZE4riIx03scZwB84nrxRteL5FZ8XgDF2yRCzvhTqF5GaFbEdfbYEzdpBDFBfpCb9EiyEjDZkscCuHVsaAb0%25lR2oubf4Bw8j7aA5qntUp6xbZ35BjkeTjHq0MvUi58LYU4GZIH98jmB4R4hFUP672tAT3dYgMxZidWvqneNW",
+        "image": "images/cars/x3-1.webp",
+        "id": "1",
+        "cost": 750,
+        "hex": "#27588b"
+      },
+      {
+        "name": "Fire red metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331pkJEVZ8XgiAsji7UmvhE0VAiDoMIjAeSw27BzcQXI%25lZyY4Up6EHswTHA5mhJPH65e2oub0TmvayRCzPWDD%25Viny2oegYA89RbfKYmUrOpQhRVAfoUMA8HC4vqhJHhZR%25mou%25KXKy7HSfWQWTe%25V1PaP3%25fNEbnbHT10s9Oao6E4riIn4uscZwBO24rxRteIcfZ857MBvIRUgChe2L5GvloVqjgp2XHNrcv6jQ%250Zq2YDaf4YQjmqn1cvtDyLOExhDqTJIs8egL3uBrq0VJdSeZLEbuzVMRJseSkNh5uqzVA0ogSAaNF4HvVFf0Kc%252NK14Wxfj0yucP81D4TWxbUEqcaF89GsLxCTUiprJ8l3Gw6ZuU2eptYRSGTp67m5VpK6YCygNLCimlTv0JACyX324u8zTQdjcSIM3azDxVBrdnkq8NZEzOALU03CkIFJGbYQABKup97IFeWS6iHdKMPVYw%25gWhbNmtw4Po90y7ZvbHi4TCnR9%25wc3ZlMiftxdRyMw178z5hhtECUkgu77slGAvzVCrXpF2azlZQ6KQIiXRaYWa9wQ5nmPn4UagOybOWKnvIT9IJ4O2B3iBtVIjedwe7YBDMztMjUeqhk7h0kMLoACu1nhJHFlSIoou%25KXVGIHSfWQN4r%25V1Pa0cZfNEbn4VM10s9OcNZE4riIx03scZwB84nrxRteL5FZ8XgDF2yRCzvhT085GaFbEdfbYEzdpBDFBfpCb9EiyEjDZkscCuHVsaAb0%25lR2oubf4Bw8j7aA5qntUp6xbZ35BjkeTjHq0MvUi58LYU4GZIH98jmB4R4hFUP672tAT3dYgMxZidWvqneNW",
+        "image": "images/cars/x3-2.webp",
+        "id": "2",
+        "cost": 1200,
+        "hex": "#a92331"
+      },
+      {
+        "name": "Frozen Deep Grey metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331pkJEVZ8XgiAsji7UmvhE0VAiDoMIjAeSw27BzcQXI%25lZyY4Up6EHswTHA5mhJPH65e2oub0TmvayRCzPWDD%25Viny2oegYA89RbfKYmUrOpQhRVAfoUMA8HC4v2hJHhZR%25mou%25KXKy7HSfWQWTe%25V1PaP3%25fNEbnbHT10s9Oao6E4riIn4uscZwBO24rxRteIcfZ857MBvIRUgChe2L5GvloVqjgp2XHNrcv6jQ%250Zq2YDaf4YQjmqn1cvtDyLOExhDqTJIs8egL3uBrq0VJdSeZLEbuzVMRJseSkNh5uqzVA0ogSAaNF4HvVFf0Kc%252NK14Wxfj0yucP81D4TWxbUEqcaF89GsLxCTUiprJ8l3Gw6ZuU2eptYRSGTp67m5VpK6YCygNLCimlTv0JACyX324u8zTQdjcSIM3azDxVBrdnkq8NZEzOALU03CkIFJGbYQABKup97IFeWS6iHdKMPVYw%25gWhbNmtw4Po90y7ZvbHi4TCnR9%25wc3ZlMiftxdRyMw178z5hhtECUkgu77slGAvzVCrXpF2azlZQ6KQIiXRaYWa9wQ5nmPn4UagOybOWKnvIT9IJ4O2B3iBtVIjedwe7YBDMztMjUeqhk7h0kMLoACu1nhJHFlSIoou%25KXVGIHSfWQN4r%25V1Pa0cZfNEbn4VM10s9OcNZE4riIx03scZwB84nrxRteL5FZ8XgDF2yRCzvhT045GaFbEdfbYEzdpBDFBfpCb9EiyEjDZkscCuHVsaAb0%25lR2oubf4Bw8j7aA5qntUp6xbZ35BjkeTjHq0MvUi58LYU4GZIH98jmB4R4hFUP672tAT3dYgMxZidWvqneNW",
+        "image": "images/cars/x3-3.webp",
+        "id": "3",
+        "cost": 1500,
+        "hex": "#858c96"
+      }
+    ]
+  },
+  "x5": {
+    "source": "https://www.bmw-me.com/en/all-models/x-series/x5/bmw-x5.html",
+    "colors": [
+      {
+        "name": "Mineral White metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331pkJEVZ8X5mMxoRCz1fZD%25VibdFWPJjuMwQXhpv6OjP05x2YI3w9cEiNHCOnUUDyesix254bXABNIqab9FSrW1vNyXq2FgXAjHxAmv6jvo8BP2YD0De2VrtGZH9urxRtetmwZ857MBTkRUgChe845GvloMjegp2XHhDfv6jQ%25oqv2YDaf4RLjmqn1c5FDyLOExzOqTJIs8kKL3uBrUDpJdSeZGsbuzVMRJceSkNh5uriVA0ogSZhNF4HvVRA0Kc%252Nu74Wxfj0SKcP81D4YnxbUEqcuX89GsLxStUiprJ8CYGw6ZuU8rptYRSGQz67m5VpDhYCygN6qumlTv0YjyyX324mkVTQdjcyA43azDxTQjdnkq8NnBzOALU06KkIFJG4hIABKupczgFeWS6ivnKMPVYwfdWhbNmtw4Po90y7ZvbHi4TCnR9%25wc3lOHiftxdRkIw1pCaJXgtUDlkHDZ7sYJNbjWNRbDjr3aJ3WrUN0b4gbmeGj9%25UBFM9YLNoKGtXABNWH3c1Q8YL7nmxErZfNw273QqdvQFnozlE471OREHswTF01Q53HtHkJEVZ8XxLv2jRCzfw4jSlnmdhS",
+        "image": "images/cars/x5-0.webp",
+        "id": "0",
+        "cost": 0,
+        "hex": "#eef0ed"
+      },
+      {
+        "name": "Blue Ridge Mountain metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331pkJEVZ8X5mMxoRCz1fZD%25VibdFWPJjuMwQXhpv6OjP05x2YI3w9cEiNHCOnUUDyesix254bXABNIqab9FSrW1vNyXq2FgXAjHdpvv6jvo8BP2YD0De2VrtGZH9urxRtetmwZ857MBTkRUgChe845GvloMjegp2XHhDfv6jQ%25oqv2YDaf4RLjmqn1c5FDyLOExzOqTJIs8kKL3uBrUDpJdSeZGsbuzVMRJceSkNh5uriVA0ogSZhNF4HvVRA0Kc%252Nu74Wxfj0SKcP81D4YnxbUEqcuX89GsLxStUiprJ8CYGw6ZuU8rptYRSGQz67m5VpDhYCygN6qumlTv0YjyyX324mkVTQdjcyA43azDxTQjdnkq8NnBzOALU06KkIFJG4hIABKupczgFeWS6ivnKMPVYwfdWhbNmtw4Po90y7ZvbHi4TCnR9%25wc3lOHiftxdRkIw1pCaJXgtUDlkvE77sYJNbjWNRbDjr3aJ3WrUN0b4gbmeGj9%25UBFM9YLNoKGtXABNWH3c1Q8YL7nmxErZfNw273QqdvQFnozlE471OREHswTF01Q53HtHkJEVZ8XxLv2jRCzfw4jSlnmdhS",
+        "image": "images/cars/x5-1.webp",
+        "id": "1",
+        "cost": 750,
+        "hex": "#27588b"
+      },
+      {
+        "name": "Skyscraper Grey metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331pkJEVZ8X5mMxoRCz1fZD%25VibdFWPJjuMwQXhpv6OjP05x2YI3w9cEiNHCOnUUDyesix254bXABNIqab9FSrW1vNyXq2FgXAjHdJbv6jvo8BP2YD0De2VrtGZH9urxRtetmwZ857MBTkRUgChe845GvloMjegp2XHhDfv6jQ%25oqv2YDaf4RLjmqn1c5FDyLOExzOqTJIs8kKL3uBrUDpJdSeZGsbuzVMRJceSkNh5uriVA0ogSZhNF4HvVRA0Kc%252Nu74Wxfj0SKcP81D4YnxbUEqcuX89GsLxStUiprJ8CYGw6ZuU8rptYRSGQz67m5VpDhYCygN6qumlTv0YjyyX324mkVTQdjcyA43azDxTQjdnkq8NnBzOALU06KkIFJG4hIABKupczgFeWS6ivnKMPVYwfdWhbNmtw4Po90y7ZvbHi4TCnR9%25wc3lOHiftxdRkIw1pCaJXgtUDlkvnS7sYJNbjWNRbDjr3aJ3WrUN0b4gbmeGj9%25UBFM9YLNoKGtXABNWH3c1Q8YL7nmxErZfNw273QqdvQFnozlE471OREHswTF01Q53HtHkJEVZ8XxLv2jRCzfw4jSlnmdhS",
+        "image": "images/cars/x5-2.webp",
+        "id": "2",
+        "cost": 1200,
+        "hex": "#858c96"
+      },
+      {
+        "name": "Black Sapphire metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331pkJEVZ8X5mMxoRCz1fZD%25VibdFWPJjuMwQXhpv6OjP05x2YI3w9cEiNHCOnUUDyesix254bXABNIqab9FSrW1vNyXq2FgXAjH5Pvv6jvo8BP2YD0De2VrtGZH9urxRtetmwZ857MBTkRUgChe845GvloMjegp2XHhDfv6jQ%25oqv2YDaf4RLjmqn1c5FDyLOExzOqTJIs8kKL3uBrUDpJdSeZGsbuzVMRJceSkNh5uriVA0ogSZhNF4HvVRA0Kc%252Nu74Wxfj0SKcP81D4YnxbUEqcuX89GsLxStUiprJ8CYGw6ZuU8rptYRSGQz67m5VpDhYCygN6qumlTv0YjyyX324mkVTQdjcyA43azDxTQjdnkq8NnBzOALU06KkIFJG4hIABKupczgFeWS6ivnKMPVYwfdWhbNmtw4Po90y7ZvbHi4TCnR9%25wc3lOHiftxdRkIw1pCaJXgtUDlkwu77sYJNbjWNRbDjr3aJ3WrUN0b4gbmeGj9%25UBFM9YLNoKGtXABNWH3c1Q8YL7nmxErZfNw273QqdvQFnozlE471OREHswTF01Q53HtHkJEVZ8XxLv2jRCzfw4jSlnmdhS",
+        "image": "images/cars/x5-3.webp",
+        "id": "3",
+        "cost": 1500,
+        "hex": "#20242a"
+      }
+    ]
+  },
+  "x7": {
+    "source": "https://www.bmw-me.com/en/all-models/x-series/x7/bmw-x7.html",
+    "colors": [
+      {
+        "name": "Blue Ridge Mountain metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331cqgv2Z7d%25i02uCaY3MuO2keJXKVZPty157WN4cSk%25Wl6JyVAfoUMA8HC4LhhJHhdmoZou%255%25ioZO3qICmsO2B3i3JrIjedw9C2BDMzti08eqhk7wHiMLoACt%25XhJHFl7f5ou%25KXg7dHSfWQveU%25V1Pa2MSfNEbnjxb10s9OD8pE4riIqfOscZwBLOmrxRteJCOZ857MrjtRUgChZB35GvloReCgp2XH5rzv6jQ%25gZp2YDafvSPjmqn12rFDyLOEjZdqTJIsDkSL3uBrqFcJdSeZL%25tuzVMRJfsSkNh5uHVVA0ogSx5NF4HvV8T0Kc%252NFH4Wxfj0TccP81D43cxbUEqgbw89GsLv79UiprJ2xhGw6ZuToPptYRS3Tg67m5VdIhYCygNzWBmlTv0kPCyX3244k%25TQdjcom33azDxH4YdnuLR2DqXtQmSxcyTifGO6LTeJnTNdPumtE6CJeio7sYJNbjWNRbDjr3aJkWsFhdqfA8onzzOSM5Z7pRix2uJXXABNXTaAxgqO30WiyXqm0zypTjHrlmSk%25Nb5zvVo7qDS8jmBYXGuSDOPLFtBZ8XJfJnTNzcPrcYBLgvy2oyRETWTQLx19mpP%255",
+        "image": "images/cars/x7-0.webp",
+        "id": "0",
+        "cost": 0,
+        "hex": "#27588b"
+      },
+      {
+        "name": "Aventurine Red metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331cqgv2Z7d%25i02uCaY3MuO2keJXKVZPty157WN4cSk%25Wl6JyVAfoUMA8HC4QkhJHhdmoZou%255%25ioZO3qICmsO2B3i3JrIjedw9C2BDMzti08eqhk7wHiMLoACt%25XhJHFl7f5ou%25KXg7dHSfWQveU%25V1Pa2MSfNEbnjxb10s9OD8pE4riIqfOscZwBLOmrxRteJCOZ857MrjtRUgChZB35GvloReCgp2XH5rzv6jQ%25gZp2YDafvSPjmqn12rFDyLOEjZdqTJIsDkSL3uBrqFcJdSeZL%25tuzVMRJfsSkNh5uHVVA0ogSx5NF4HvV8T0Kc%252NFH4Wxfj0TccP81D43cxbUEqgbw89GsLv79UiprJ2xhGw6ZuToPptYRS3Tg67m5VdIhYCygNzWBmlTv0kPCyX3244k%25TQdjcom33azDxH4YdnuLR2DqXtQmSxcyTifGO6LTeJnTNdPumtE6CJeio7sYJNbjWNRbDjr3aJkWsFhdqfA8opDzOSM5Z7pRix2uJXXABNXTaAxgqO30WiyXqm0zypTjHrlmSk%25Nb5zvVo7qDS8jmBYXGuSDOPLFtBZ8XJfJnTNzcPrcYBLgvy2oyRETWTQLx19mpP%255",
+        "image": "images/cars/x7-1.webp",
+        "id": "1",
+        "cost": 750,
+        "hex": "#a92331"
+      },
+      {
+        "name": "Frozen Pure Grey metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331cqgv2Z7d%25i02uCaY3MuO2keJXKVZPty157WN4cSk%25Wl6JyVAfoUMA8HC4QGhJHhdmoZou%255%25ioZO3qICmsO2B3i3JrIjedw9C2BDMzti08eqhk7wHiMLoACt%25XhJHFl7f5ou%25KXg7dHSfWQveU%25V1Pa2MSfNEbnjxb10s9OD8pE4riIqfOscZwBLOmrxRteJCOZ857MrjtRUgChZB35GvloReCgp2XH5rzv6jQ%25gZp2YDafvSPjmqn12rFDyLOEjZdqTJIsDkSL3uBrqFcJdSeZL%25tuzVMRJfsSkNh5uHVVA0ogSx5NF4HvV8T0Kc%252NFH4Wxfj0TccP81D43cxbUEqgbw89GsLv79UiprJ2xhGw6ZuToPptYRS3Tg67m5VdIhYCygNzWBmlTv0kPCyX3244k%25TQdjcom33azDxH4YdnuLR2DqXtQmSxcyTifGO6LTeJnTNdPumtE6CJeio7sYJNbjWNRbDjr3aJkWsFhdqfA8opEzOSM5Z7pRix2uJXXABNXTaAxgqO30WiyXqm0zypTjHrlmSk%25Nb5zvVo7qDS8jmBYXGuSDOPLFtBZ8XJfJnTNzcPrcYBLgvy2oyRETWTQLx19mpP%255",
+        "image": "images/cars/x7-2.webp",
+        "id": "2",
+        "cost": 1200,
+        "hex": "#858c96"
+      },
+      {
+        "name": "Sparkling Copper metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331cqgv2Z7d%25i02uCaY3MuO2keJXKVZPty157WN4cSk%25Wl6JyVAfoUMA8HC4QhhJHhdmoZou%255%25ioZO3qICmsO2B3i3JrIjedw9C2BDMzti08eqhk7wHiMLoACt%25XhJHFl7f5ou%25KXg7dHSfWQveU%25V1Pa2MSfNEbnjxb10s9OD8pE4riIqfOscZwBLOmrxRteJCOZ857MrjtRUgChZB35GvloReCgp2XH5rzv6jQ%25gZp2YDafvSPjmqn12rFDyLOEjZdqTJIsDkSL3uBrqFcJdSeZL%25tuzVMRJfsSkNh5uHVVA0ogSx5NF4HvV8T0Kc%252NFH4Wxfj0TccP81D43cxbUEqgbw89GsLv79UiprJ2xhGw6ZuToPptYRS3Tg67m5VdIhYCygNzWBmlTv0kPCyX3244k%25TQdjcom33azDxH4YdnuLR2DqXtQmSxcyTifGO6LTeJnTNdPumtE6CJeio7sYJNbjWNRbDjr3aJkWsFhdqfA8opzzOSM5Z7pRix2uJXXABNXTaAxgqO30WiyXqm0zypTjHrlmSk%25Nb5zvVo7qDS8jmBYXGuSDOPLFtBZ8XJfJnTNzcPrcYBLgvy2oyRETWTQLx19mpP%255",
+        "image": "images/cars/x7-3.webp",
+        "id": "3",
+        "cost": 1500,
+        "hex": "#9d7b61"
+      }
+    ]
+  },
+  "m3": {
+    "source": "https://www.bmw-me.com/en/all-models/m-series/bmw-3-series-m-models/bmw-m3-sedan.html",
+    "colors": [
+      {
+        "name": "Tanzanite Blue metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331pkJEVZ8XgiAsji7UmvhE0VAiDoVIjAeSw27BzcQXI%25lZyY4Up6EHswTHAbrhJPH65e2oub0TmvayRCzPWDD%25Viny2oegYA89RbfKYmUrOpQhRVAfoUMA8HC4LehJHhu5%25mou%25KXKy7HSfWQWhm%25V1PaP9lfNEbnbjL10s9Oa0JE4riInv0scZwBO4VrxRteIgOZ857MBvARUgChSD25GvloVeYgp2XHNrDv6jQ%250dW2YDaf4OTjmqn1cI9DyLOEjgmqTJIsDTpL3uBrq3vJdSeZLgauzVMRJGMSkNh5utiVA0ogS73NF4HvVy10Kc%252N1%254Wxfj0GScP81D43kxbUEqgbF89GsLvyKUiprJ2T9Gw6ZujNmptYRSDXR67m5VqQkYCygNLaWmlTv0JnbyX324uY%25TQdjcSmj3azDxVytdnkq8WplzOALUPwnkIFJGbhTABKup9oRFeWS6iHgKMPVYw2OWhbNmtjDPo90y7tcbHi4TCR29%25wc3lO5iftxdXCyw178z5T8tECUkgoo7slGAvSCCrXpF2YclZQ6KjmwXRaYWaBwQ5nmPnitagOybOcGnvIT9IJ4O2B3iBtVIjedwe7YBDMztMjUeqKo1p%250MA8HC4LehJPpyOxayVO8xuw1pwauAyTO30OjEeUIjAZX5IPGyvQFM%25lZya2wdqfkPGhEbzLuSDyechwfUt4fXEv7HL3hqsVL2JeiXTqfNw2M2CpLmSk%25zG4cxVo7De3xYHEbtgY",
+        "image": "images/cars/m3-0.webp",
+        "id": "0",
+        "cost": 0,
+        "hex": "#27588b"
+      },
+      {
+        "name": "M Toronto Rot metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331pkJEVZ8XgiAsji7UmvhE0VAiDoVIjAeSw27BzcQXI%25lZyY4Up6EHswTHAbrhJPH65e2oub0TmvayRCzPWDD%25Viny2oegYA89RbfKYmUrOpQhRVAfoUMA8HC4LJhJHhu5%25mou%25KXKy7HSfWQWhm%25V1PaP9lfNEbnbjL10s9Oa0JE4riInv0scZwBO4VrxRteIgOZ857MBvARUgChSD25GvloVeYgp2XHNrDv6jQ%250dW2YDaf4OTjmqn1cI9DyLOEjgmqTJIsDTpL3uBrq3vJdSeZLgauzVMRJGMSkNh5utiVA0ogS73NF4HvVy10Kc%252N1%254Wxfj0GScP81D43kxbUEqgbF89GsLvyKUiprJ2T9Gw6ZujNmptYRSDXR67m5VqQkYCygNLaWmlTv0JnbyX324uY%25TQdjcSmj3azDxVytdnkq8WplzOALUPwnkIFJGbhTABKup9oRFeWS6iHgKMPVYw2OWhbNmtjDPo90y7tcbHi4TCR29%25wc3lO5iftxdXCyw178z5T8tECUkgoo7slGAvSCCrXpF2YclZQ6KjmwXRaYWaBwQ5nmPnitagOybOcGnvIT9IJ4O2B3iBtVIjedwe7YBDMztMjUeqKo1p%250MA8HC4LJhJPpyOxayVO8xuw1pwauAyTO30OjEeUIjAZX5IPGyvQFM%25lZya2wdqfkPGhEbzLuSDyechwfUt4fXEv7HL3hqsVL2JeiXTqfNw2M2CpLmSk%25zG4cxVo7De3xYHEbtgY",
+        "image": "images/cars/m3-1.webp",
+        "id": "1",
+        "cost": 750,
+        "hex": "#a92331"
+      },
+      {
+        "name": "M Brooklyn Grey metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331pkJEVZ8XgiAsji7UmvhE0VAiDoVIjAeSw27BzcQXI%25lZyY4Up6EHswTHAbrhJPH65e2oub0TmvayRCzPWDD%25Viny2oegYA89RbfKYmUrOpQhRVAfoUMA8HC4EmhJHhu5%25mou%25KXKy7HSfWQWhm%25V1PaP9lfNEbnbjL10s9Oa0JE4riInv0scZwBO4VrxRteIgOZ857MBvARUgChSD25GvloVeYgp2XHNrDv6jQ%250dW2YDaf4OTjmqn1cI9DyLOEjgmqTJIsDTpL3uBrq3vJdSeZLgauzVMRJGMSkNh5utiVA0ogS73NF4HvVy10Kc%252N1%254Wxfj0GScP81D43kxbUEqgbF89GsLvyKUiprJ2T9Gw6ZujNmptYRSDXR67m5VqQkYCygNLaWmlTv0JnbyX324uY%25TQdjcSmj3azDxVytdnkq8WplzOALUPwnkIFJGbhTABKup9oRFeWS6iHgKMPVYw2OWhbNmtjDPo90y7tcbHi4TCR29%25wc3lO5iftxdXCyw178z5T8tECUkgoo7slGAvSCCrXpF2YclZQ6KjmwXRaYWaBwQ5nmPnitagOybOcGnvIT9IJ4O2B3iBtVIjedwe7YBDMztMjUeqKo1p%250MA8HC4EmhJPpyOxayVO8xuw1pwauAyTO30OjEeUIjAZX5IPGyvQFM%25lZya2wdqfkPGhEbzLuSDyechwfUt4fXEv7HL3hqsVL2JeiXTqfNw2M2CpLmSk%25zG4cxVo7De3xYHEbtgY",
+        "image": "images/cars/m3-2.webp",
+        "id": "2",
+        "cost": 1200,
+        "hex": "#858c96"
+      },
+      {
+        "name": "Frozen Tampa Bay Green metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331pkJEVZ8XgiAsji7UmvhE0VAiDoVIjAeSw27BzcQXI%25lZyY4Up6EHswTHAbrhJPH65e2oub0TmvayRCzPWDD%25Viny2oegYA89RbfKYmUrOpQhRVAfoUMA8H0L8whJHhu5%25mou%25KXKy7HSfWQWhm%25V1PaP9lfNEbnbjL10s9Oa0JE4riInv0scZwBO4VrxRteIgOZ857MBvARUgChSD25GvloVeYgp2XHNrDv6jQ%250dW2YDaf4OTjmqn1cI9DyLOEjgmqTJIsDTpL3uBrq3vJdSeZLgauzVMRJGMSkNh5utiVA0ogS73NF4HvVy10Kc%252N1%254Wxfj0GScP81D43kxbUEqgbF89GsLvyKUiprJ2T9Gw6ZujNmptYRSDXR67m5VqQkYCygNLaWmlTv0JnbyX324uY%25TQdjcSmj3azDxVytdnkq8WplzOALUPwnkIFJGbhTABKup9oRFeWS6iHgKMPVYw2OWhbNmtjDPo90y7tcbHi4TCR29%25wc3lO5iftxdXCyw178z5T8tECUkgoo7slGAvSCCrXpF2YclZQ6KjmwXRaYWaBwQ5nmPnitagOybOcGnvIT9IJ4O2B3iBtVIjedwe7YBDMztMjUeqKo1p%250MA8H0L8whJPpyOxayVO8xuw1pwauAyTO30OjEeUIjAZX5IPGyvQFM%25lZya2wdqfkPGhEbzLuSDyechwfUt4fXEv7HL3hqsVL2JeiXTqfNw2M2CpLmSk%25zG4cxVo7De3xYHEbtgY",
+        "image": "images/cars/m3-3.webp",
+        "id": "3",
+        "cost": 1500,
+        "hex": "#396354"
+      }
+    ]
+  },
+  "i4": {
+    "source": "https://www.bmw-me.com/en/all-models/bmw-i/i4/bmw-i4-gran-coupe.html",
+    "colors": [
+      {
+        "name": "Mineral White metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-73315jAvmZ7dgM0dpRUQoFSr1JkiyXqPJ1NiEWNR46sS3aJzMxQUdqfY63WptvX%25oKNHkJEg5bbYCjyHWp9mlD3R%256kRvXId4pw9%25RAc0Sk%25uR4SqVo7nzuscCGzL1SrxlzK%25yoKG%25Ty8nvzg%25eMhO30CmRhEdFJNiEWhcnzIWGjuekx97dnuLR2DqXtQmSxcplifGOKOYgMjHS91cetUDCnFgLO7G6Y89RbfKYmUrOpQhRVAfVUa2rZpRBpksKZ6725zZ7dgM0dpRUgRJwV75GvloMdFgp2XHhDMv6jQ%25oqS2YDaf4RLjmqn1cmaDyLOEx8BqTJIsDNWL3uBrq2TJdSeZLU3uzVMRJwjSkNh5utiVA0ogSETNF4HvVmN0Kc%252ZKz4WxfjRLUcP81D5w1xbUEqgtZ89GsLmSKUiprJyz9Gw6ZuToPptYRS3Tg67m5VdKIYCygNOu9mlTv0IiiyX324B1T",
+        "image": "images/cars/i4-0.webp",
+        "id": "0",
+        "cost": 0,
+        "hex": "#eef0ed"
+      },
+      {
+        "name": "Fire red metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-73315jAvmZ7dgMyNxRUQoFSr1JkiyXqPJ1NiEWNR46sS3aJzMxQUdqfY63WptvX%25oKNHkJEg5bbYCjyHWp9mlD3R%256kRvXId4pw9%25RAc0Sk%25uR4SqVo7nzuscCGzL1SrxlzK%25yoKG%25Ty8nvzg%25eMhO30CmRhEdFJNiEWhcnzIWGjuekx97dnuLR2DqXtQmSxcplifGOKOYgMjHS91cetUDCnFgLO7G6Y89RbfKYmUrOpQhRVAfVUa2rZpRBpksKZ6725zZ7dgMyNxRUgRJwV75GvloMdFgp2XHhDMv6jQ%25oqS2YDaf4RLjmqn1cmaDyLOEx8BqTJIsDNWL3uBrq2TJdSeZLU3uzVMRJwjSkNh5utiVA0ogSETNF4HvVmN0Kc%252ZKz4WxfjRLUcP81D5w1xbUEqgtZ89GsLmSKUiprJyz9Gw6ZuToPptYRS3Tg67m5VdKIYCygNOu9mlTv0IiiyX324B1T",
+        "image": "images/cars/i4-1.webp",
+        "id": "1",
+        "cost": 750,
+        "hex": "#a92331"
+      },
+      {
+        "name": "Dravit Grey metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-73315jAvmZ7dgMy8pRUQoFSr1JkiyXqPJ1NiEWNR46sS3aJzMxQUdqfY63WptvX%25oKNHkJEg5bbYCjyHWp9mlD3R%256kRvXId4pw9%25RAc0Sk%25uR4SqVo7nzuscCGzL1SrxlzK%25yoKG%25Ty8nvzg%25eMhO30CmRhEdFJNiEWhcnzIWGjuekx97dnuLR2DqXtQmSxcplifGOKOYgMjHS91cetUDCnFgLO7G6Y89RbfKYmUrOpQhRVAfVUa2rZpRBpksKZ6725zZ7dgMy8pRUgRJwV75GvloMdFgp2XHhDMv6jQ%25oqS2YDaf4RLjmqn1cmaDyLOEx8BqTJIsDNWL3uBrq2TJdSeZLU3uzVMRJwjSkNh5utiVA0ogSETNF4HvVmN0Kc%252ZKz4WxfjRLUcP81D5w1xbUEqgtZ89GsLmSKUiprJyz9Gw6ZuToPptYRS3Tg67m5VdKIYCygNOu9mlTv0IiiyX324B1T",
+        "image": "images/cars/i4-2.webp",
+        "id": "2",
+        "cost": 1200,
+        "hex": "#858c96"
+      },
+      {
+        "name": "Cape York Green metallic",
+        "url": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-73315jAvmZ7dgMyH6RUQoFSr1JkiyXqPJ1NiEWNR46sS3aJzMxQUdqfY63WptvX%25oKNHkJEg5bbYCjyHWp9mlD3R%256kRvXId4pw9%25RAc0Sk%25uR4SqVo7nzuscCGzL1SrxlzK%25yoKG%25Ty8nvzg%25eMhO30CmRhEdFJNiEWhcnzIWGjuekx97dnuLR2DqXtQmSxcplifGOKOYgMjHS91cetUDCnFgLO7G6Y89RbfKYmUrOpQhRVAfVUa2rZpRBpksKZ6725zZ7dgMyH6RUgRJwV75GvloMdFgp2XHhDMv6jQ%25oqS2YDaf4RLjmqn1cmaDyLOEx8BqTJIsDNWL3uBrq2TJdSeZLU3uzVMRJwjSkNh5utiVA0ogSETNF4HvVmN0Kc%252ZKz4WxfjRLUcP81D5w1xbUEqgtZ89GsLmSKUiprJyz9Gw6ZuToPptYRS3Tg67m5VdKIYCygNOu9mlTv0IiiyX324B1T",
+        "image": "images/cars/i4-3.webp",
+        "id": "3",
+        "cost": 1500,
+        "hex": "#396354"
+      }
+    ]
+  }
+}

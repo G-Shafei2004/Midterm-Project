@@ -1,0 +1,376 @@
+/* BMW Explorer — final visual polish.
+   Keeps the existing page structure and interactions, but gives every page
+   one modern, restrained blue/charcoal design system. */
+:root {
+  --ink: #111c27;
+  --ink-soft: #1b2b3a;
+  --paper: #f5f7f9;
+  --surface: #ffffff;
+  --surface-soft: #edf2f6;
+  --muted: #5d6b78;
+  --line: #dce4eb;
+  --blue: #0b70b7;
+  --blue-dark: #07548c;
+  --gold: #0b70b7;
+  --selected: #e7f2fb;
+  --nav-bg: #081522;
+  --nav-ink: #f4f8fc;
+  --table-head: #0d3e63;
+  --success-bg: #e9f7ef;
+  --success-ink: #175c36;
+  --error: #b42318;
+  --display: "Inter", "Segoe UI", Arial, sans-serif;
+  --body: "Inter", "Segoe UI", Arial, sans-serif;
+  --bs-body-bg: var(--paper);
+  --bs-body-color: var(--ink);
+  --bs-border-color: var(--line);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #edf4fa;
+  --ink-soft: #d9e5ef;
+  --paper: #0b1420;
+  --surface: #152232;
+  --surface-soft: #101c29;
+  --muted: #adbdcb;
+  --line: #304253;
+  --blue: #63b8f7;
+  --blue-dark: #8bcaff;
+  --gold: #63b8f7;
+  --selected: #1b344a;
+  --nav-bg: #060e17;
+  --nav-ink: #f4f8fc;
+  --table-head: #174d78;
+  --success-bg: #143526;
+  --success-ink: #b3ebc8;
+  --error: #ffb4ae;
+  --bs-body-bg: var(--paper);
+  --bs-body-color: var(--ink);
+  --bs-border-color: var(--line);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+h1, h2, h3, h4, .section-title, .detail-title,
+.preview-mark, .preview-car-name, .preview-total {
+  font-family: var(--display);
+  letter-spacing: -0.035em;
+}
+h1, h2, h3 { color: inherit; }
+.accent, .gold-text { color: var(--gold) !important; }
+.eyebrow, .dark-eyebrow { color: var(--blue-dark); }
+:focus-visible {
+  outline: 3px solid #1687d2 !important;
+  outline-offset: 3px;
+}
+
+/* Navigation is the same visual anchor on every page. */
+.site-navbar {
+  padding: 11px 0;
+  background: var(--nav-bg);
+  border-bottom: 1px solid #ffffff1c;
+  box-shadow: 0 5px 24px #06111d22;
+}
+.site-navbar .navbar-brand,
+.footer-top .navbar-brand {
+  color: #fff !important;
+  font-family: var(--body);
+  font-size: 1.04rem;
+  font-weight: 850;
+  letter-spacing: .075em;
+}
+.navbar-brand span {
+  color: #72bdf1;
+  font-family: var(--body);
+  font-size: .64rem;
+  font-weight: 800;
+  letter-spacing: .19em;
+}
+.site-navbar .nav-link {
+  color: #c9d5e0 !important;
+  font-size: .84rem;
+  font-weight: 600;
+  transition: color .18s ease;
+}
+.site-navbar .nav-link:hover,
+.site-navbar .nav-link.active { color: #fff !important; }
+.site-navbar .nav-link::after { background: #55a9e5; height: 2px; }
+.theme-toggle {
+  border: 1px solid #ffffff50;
+  background: #ffffff0d;
+  color: #f7fbff;
+  border-radius: 999px;
+  min-height: 42px;
+  padding: 8px 14px;
+  font: 650 .8rem var(--body);
+  transition: background .18s ease, border-color .18s ease;
+}
+.theme-toggle:hover { background: #ffffff1b; border-color: #8dcafa; }
+.saved-count { background: #4da2df; color: #071421; font-weight: 800; }
+
+/* Brand accent: BMW blue replaces the older gold-only accent. */
+.btn-gold {
+  color: #fff !important;
+  background: #0b70b7 !important;
+  border-color: #0b70b7 !important;
+  border-radius: 7px;
+  font-weight: 750;
+  box-shadow: 0 5px 16px #0b70b726;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.btn-gold:hover, .btn-gold:focus-visible {
+  color: #fff !important;
+  background: #07548c !important;
+  border-color: #07548c !important;
+  transform: translateY(-2px);
+  box-shadow: 0 9px 22px #0b70b738;
+}
+.btn-outline-secondary, .btn-outline-dark {
+  border-radius: 7px;
+  font-weight: 650;
+}
+.text-link { color: var(--blue-dark); }
+.text-link:hover { color: var(--blue); }
+.hero h1 span, .page-hero h1 span { color: #75c2fb; }
+.hero .eyebrow, .page-hero .eyebrow,
+.featured-section .eyebrow, .garage-section .eyebrow {
+  color: #8bcfff;
+}
+.video-toggle {
+  border-color: #ffffff70;
+  background: #061522c9;
+  border-radius: 999px;
+}
+.video-toggle:hover { background: #0b70b7; }
+
+/* More legible surfaces and cleaner interactive cards. */
+.feature-card, .model-card, .journey-card, .finder-controls,
+.filter-panel, .config-controls, .inquiry-form, .pricing-note-panel,
+.compare-option, .comparison-result, .comparison-mobile-card,
+.detail-stage, .detail-feature, .detail-configuration {
+  border-color: var(--line);
+  box-shadow: 0 8px 24px #102b4208;
+}
+.feature-card, .model-card, .journey-card, .compare-option,
+.save-button, .faq-question, .paint-chip, .text-button {
+  transition: transform .18s ease, box-shadow .18s ease,
+    border-color .18s ease, background-color .18s ease, color .18s ease;
+}
+.feature-card:hover, .model-card:hover, .journey-card:hover {
+  border-color: #8bbfe2;
+  box-shadow: 0 16px 34px #0c2d4816;
+}
+.model-card { border-radius: 14px; }
+.model-card img {
+  background: #e9eff4;
+  object-fit: contain;
+}
+.model-image-link { background: #e9eff4; }
+.model-image-link img { transition: transform .35s ease; }
+.model-image-link:hover img { transform: scale(1.035); }
+.model-details-hint {
+  background: #071726e8;
+  border-color: #ffffff70;
+  border-radius: 6px;
+  letter-spacing: .065em;
+}
+.model-category, .compare-counter {
+  background: var(--selected);
+  color: var(--blue-dark);
+}
+.save-button {
+  color: var(--blue-dark);
+  border-color: var(--line);
+  border-radius: 999px;
+  font-weight: 700;
+}
+.save-button:hover, .save-button[aria-pressed="true"] {
+  color: var(--blue-dark);
+  background: var(--selected);
+  border-color: #77b4e2;
+}
+.paint-chip[aria-pressed="true"] { outline-color: var(--blue); }
+.collection-count { border-color: var(--line); color: var(--blue-dark); }
+.filter-panel, .inquiry-form, .config-controls,
+.finder-controls, .detail-stage { border-radius: 15px; }
+.form-control, .form-select {
+  min-height: 46px;
+  background-color: var(--surface);
+  color: var(--ink);
+  border-color: var(--line);
+  border-radius: 7px;
+}
+.form-control:focus, .form-select:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 .2rem color-mix(in srgb, var(--blue) 20%, transparent);
+}
+.form-control::placeholder { color: var(--muted); opacity: .82; }
+.field-error, .text-danger { color: var(--error) !important; }
+.form-control.is-invalid, .form-select.is-invalid { border-color: var(--error); }
+.success-message { background: var(--success-bg); color: var(--success-ink); }
+
+/* Bring the detailed model story into the same colour system. */
+.detail-anchor-nav {
+  background: var(--surface);
+  border-color: var(--line);
+}
+.detail-anchor-nav a:hover,
+.detail-anchor-nav a:focus-visible { color: var(--blue-dark); border-color: var(--blue); }
+.studio-photo-layer { background: #e8eef3; }
+.studio-viewport { border-color: var(--line); }
+.studio-serial, .studio-label { color: var(--muted); }
+.showroom-rotate-cta { background: #0b70b7; }
+.showroom-rotate-cta:hover { background: #07548c; }
+
+.bmw-editorial {
+  background: var(--paper);
+  color: var(--ink);
+}
+.bmw-editorial-topline { border-color: var(--line); }
+.bmw-editorial .dark-eyebrow,
+.bmw-editorial-number { color: var(--blue-dark) !important; }
+.bmw-editorial-intro h2,
+.bmw-editorial-video-heading h2,
+.bmw-editorial-facts h3,
+.bmw-film-credit strong {
+  color: var(--ink);
+  font-family: var(--display);
+  letter-spacing: -.035em;
+}
+.bmw-editorial-kicker, .bmw-editorial-prose,
+.bmw-editorial-video-heading p:not(.bmw-editorial-number),
+.bmw-film-footnote p { color: var(--muted); }
+.bmw-editorial-feature { border-color: var(--blue); }
+.bmw-editorial-feature span,
+.bmw-editorial-facts dt { color: var(--muted); }
+.bmw-editorial-feature strong,
+.bmw-editorial-facts dd { color: var(--ink); }
+.bmw-editorial-facts {
+  background: var(--surface-soft);
+  border-color: var(--line);
+}
+.bmw-editorial-facts dl div { border-color: var(--line); }
+.bmw-editorial-prose summary,
+.bmw-editorial-video-heading a,
+.bmw-film-footnote a { color: var(--blue-dark); }
+.bmw-film-stage { box-shadow: 0 18px 45px #07152224; }
+.bmw-film-inline-tag { color: var(--blue-dark); border-color: var(--line); }
+.bmw-film-error button { background: #0b70b7; color: #fff; }
+
+/* Dark mode is fully themed, including the long editorial section. */
+html[data-theme="dark"] body { background: var(--paper); color: var(--ink); }
+html[data-theme="dark"] .features-section,
+html[data-theme="dark"] .faq-section,
+html[data-theme="dark"] .pricing-section,
+html[data-theme="dark"] .compare-section,
+html[data-theme="dark"] .detail-specs,
+html[data-theme="dark"] .finder-hero,
+html[data-theme="dark"] .start-section,
+html[data-theme="dark"] .next-drive-section,
+html[data-theme="dark"] .about-section,
+html[data-theme="dark"] .contact-section { background: var(--paper); }
+html[data-theme="dark"] .feature-card,
+html[data-theme="dark"] .model-card,
+html[data-theme="dark"] .journey-card,
+html[data-theme="dark"] .filter-panel,
+html[data-theme="dark"] .finder-controls,
+html[data-theme="dark"] .config-controls,
+html[data-theme="dark"] .inquiry-form,
+html[data-theme="dark"] .comparison-mobile-card,
+html[data-theme="dark"] .comparison-result,
+html[data-theme="dark"] .detail-feature,
+html[data-theme="dark"] .detail-configuration,
+html[data-theme="dark"] .detail-stage { background: var(--surface); color: var(--ink); border-color: var(--line); }
+html[data-theme="dark"] .about-section p:not(.eyebrow),
+html[data-theme="dark"] .feature-card p,
+html[data-theme="dark"] .model-card p,
+html[data-theme="dark"] .journey-card p,
+html[data-theme="dark"] .contact-section .col-lg-4>p:not(.eyebrow),
+html[data-theme="dark"] .detail-intro,
+html[data-theme="dark"] .result-summary,
+html[data-theme="dark"] .compare-help,
+html[data-theme="dark"] .form-hint,
+html[data-theme="dark"] .finder-intro { color: var(--muted); }
+html[data-theme="dark"] .model-card img,
+html[data-theme="dark"] .model-image-link,
+html[data-theme="dark"] .garage-car-image { background: #e5ebf0; }
+html[data-theme="dark"] .bmw-editorial { background: var(--paper); color: var(--ink); }
+html[data-theme="dark"] .bmw-editorial-intro h2,
+html[data-theme="dark"] .bmw-editorial-video-heading h2,
+html[data-theme="dark"] .bmw-editorial-facts h3,
+html[data-theme="dark"] .bmw-editorial-feature strong,
+html[data-theme="dark"] .bmw-editorial-facts dd { color: var(--ink); }
+html[data-theme="dark"] .bmw-editorial-kicker,
+html[data-theme="dark"] .bmw-editorial-prose,
+html[data-theme="dark"] .bmw-editorial-video-heading p:not(.bmw-editorial-number),
+html[data-theme="dark"] .bmw-film-footnote p { color: var(--muted); }
+html[data-theme="dark"] .bmw-editorial-facts { background: var(--surface); border-color: var(--line); }
+html[data-theme="dark"] .bmw-editorial-facts dl div,
+html[data-theme="dark"] .bmw-editorial-topline,
+html[data-theme="dark"] .bmw-film-footnote { border-color: var(--line); }
+html[data-theme="dark"] .bmw-editorial-feature span,
+html[data-theme="dark"] .bmw-editorial-facts dt { color: var(--muted); }
+html[data-theme="dark"] .bmw-film-inline-tag { color: var(--blue-dark); border-color: var(--line); }
+html[data-theme="dark"] .empty-state { border-color: var(--line); }
+html[data-theme="dark"] .config-note,
+html[data-theme="dark"] .pricing-note-panel { background: var(--surface-soft); color: var(--ink); }
+html[data-theme="dark"] .form-control,
+html[data-theme="dark"] .form-select { background-color: var(--surface); color: var(--ink); }
+
+/* Keep transitions purposeful and honour reduced-motion settings. */
+@media (max-width: 991px) {
+  .site-navbar .navbar-collapse { padding-top: 8px; }
+  .theme-toggle { margin: 10px 0 5px; }
+}
+@media (max-width: 767px) {
+  .site-navbar { padding: 8px 0; }
+  .home-hero { clip-path: none; }
+  .hero h1 { font-size: clamp(2.7rem, 12vw, 4.2rem); }
+  .hero-stats { gap: 22px; flex-wrap: wrap; }
+  .section-title { letter-spacing: -.04em; }
+  .filter-panel { padding: 16px; }
+  .model-card-body { padding: 18px; }
+  .collection-shortcuts > .container { row-gap: 10px; }
+  .detail-anchor-nav { top: 58px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  .model-image-link:hover img { transform: none; }
+}
+
+/* Remaining older gold accents are aligned with the new blue identity. */
+.hero-secondary:hover,
+.featured-link,
+.featured-link:hover,
+.featured-model span,
+.featured-model a:hover,
+.bmw-editorial-video-heading h2 em,
+.bmw-film-credit span,
+.bmw-film-error button:hover {
+  color: #78c4fb;
+}
+.about-image { box-shadow: 14px 14px 0 #c6dcec; }
+html[data-theme="dark"] .about-image { box-shadow: 14px 14px 0 #1e4563; }
+.bmw-film-play:hover,
+.bmw-film-play:focus-visible { background: #78c4fb; }
+.bmw-film-error button { background: #0b70b7; color: #fff; }
+
+/* Keep the detail-page closing section and footer aligned with the blue palette. */
+.detail-next-section .eyebrow,
+.detail-next-section em { color: #78c4fb; }
+.site-footer a { color: #a9d8fb; }
+.site-footer a:hover,
+.site-footer a:focus-visible { color: #ffffff; }

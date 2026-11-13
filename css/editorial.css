@@ -1,0 +1,64 @@
+/* Official BMW editorial story, image-first film, and responsive two-column narrative. */
+.bmw-editorial{background:#faf9f6;color:#172333;padding:clamp(48px,7vw,94px) 0 70px;scroll-margin-top:132px}
+.bmw-editorial .container{max-width:1320px}
+.bmw-editorial-topline{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-bottom:26px;border-bottom:1px solid #d9dce0;margin-bottom:42px}
+.bmw-editorial-source-label{font-size:.76rem;color:#697585;letter-spacing:.01em;text-align:right}
+.bmw-editorial .dark-eyebrow{color:#306a9d}
+.bmw-editorial-intro{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:clamp(34px,8vw,110px);align-items:start}
+.bmw-editorial-number{font-size:.72rem!important;letter-spacing:.16em;font-weight:850;color:#51799a!important;margin:0 0 20px!important}
+.bmw-editorial-intro h2,.bmw-editorial-video-heading h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2rem,4.05vw,3.65rem);line-height:1.16;letter-spacing:-.026em;color:#111c2c;text-wrap:balance;overflow-wrap:break-word;margin:0 0 20px}
+.bmw-editorial-kicker{font-weight:600;color:#506274;font-size:clamp(1rem,1.45vw,1.22rem);max-width:380px;line-height:1.65}
+.bmw-editorial-prose{max-width:740px;color:#455469;font-size:1rem;line-height:1.92}
+.bmw-editorial-prose p{margin:0 0 19px}
+.bmw-editorial-prose details{margin-top:4px}
+.bmw-editorial-prose summary{cursor:pointer;display:inline-block;color:#165a91;font-size:.88rem;font-weight:800;list-style:none;padding:7px 0;text-underline-offset:4px;text-decoration:underline}
+.bmw-editorial-prose summary::-webkit-details-marker{display:none}
+.bmw-editorial-prose details p{padding:16px 0 0;margin-bottom:0}
+.bmw-editorial-features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:45px 0 55px}
+.bmw-editorial-feature{border-top:2px solid #d5a42c;padding:15px 12px 10px 0;min-width:0}
+.bmw-editorial-feature span{display:block;font-size:.68rem;color:#6d7c8d;letter-spacing:.12em;font-weight:800;text-transform:uppercase;margin-bottom:8px}
+.bmw-editorial-feature strong{color:#192a3b;font-size:1rem;font-weight:700;line-height:1.55}
+.bmw-editorial-facts{background:#f0f2f2;border:1px solid #e0e5e7;border-radius:18px;padding:clamp(24px,3.8vw,46px);display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(20px,4vw,58px);margin-bottom:clamp(65px,8vw,110px)}
+.bmw-editorial-facts h3{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.6rem,2.4vw,2.25rem);line-height:1.25;color:#132335;margin:0 0 11px}
+.bmw-editorial-facts p:not(.bmw-editorial-number){font-size:.83rem;line-height:1.65;color:#68788a;margin:0;max-width:370px}
+.bmw-editorial-facts dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 26px;margin:0}
+.bmw-editorial-facts dl div{border-bottom:1px solid #cbd4da;padding-bottom:12px;min-width:0}
+.bmw-editorial-facts dt{font-size:.72rem;font-weight:600;color:#697887;margin-bottom:9px}
+.bmw-editorial-facts dd{font-size:clamp(.97rem,1.4vw,1.22rem);font-weight:850;color:#18344c;margin:0;overflow-wrap:anywhere}
+.bmw-editorial-video-heading{scroll-margin-top:145px;display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:23px}
+.bmw-editorial-video-heading h2 em{color:#b88a24;font-style:normal}
+.bmw-editorial-video-heading h2{font-size:clamp(2rem,3.65vw,3.3rem);margin-bottom:8px}
+.bmw-editorial-video-heading p:not(.bmw-editorial-number){margin:0;color:#52657a;font-size:.92rem}
+.bmw-editorial-video-heading a,.bmw-film-footnote a{color:#18578b;font-size:.86rem;font-weight:800;text-decoration:underline;text-underline-offset:4px;flex-shrink:0}
+.bmw-film-stage{position:relative;background:linear-gradient(135deg,#172839,#07111f);aspect-ratio:16/9;overflow:hidden;border-radius:16px;isolation:isolate;box-shadow:0 19px 48px #13273c27}
+.bmw-film-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.81;filter:brightness(.76) saturate(.94)}
+.bmw-film-poster-shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(2,8,17,.87),rgba(2,8,17,.03) 58%)}
+.bmw-film-credit{position:absolute;bottom:26px;left:clamp(20px,4vw,50px);right:20px;display:grid;gap:5px;color:white;z-index:1;pointer-events:none}
+.bmw-film-credit span{font-size:.67rem;letter-spacing:.18em;font-weight:850;color:#edc35d}
+.bmw-film-credit strong{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.02rem,2.3vw,2rem);font-weight:700;line-height:1.3;max-width:72%}
+.bmw-film-credit small{font-size:.8rem;color:#d3dee6}
+.bmw-film-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;background:rgba(255,255,255,.97);color:#142639;border:0;display:flex;gap:12px;align-items:center;justify-content:center;border-radius:999px;padding:15px 22px;box-shadow:0 8px 34px #0007;font-weight:850;font-size:.9rem;white-space:nowrap;transition:background .2s,transform .2s}
+.bmw-film-play:hover,.bmw-film-play:focus-visible{background:#f3c754;transform:translate(-50%,-50%) scale(1.05)}
+.bmw-film-play span:first-child{font-size:1.18rem}
+.bmw-film-stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#061221;z-index:3}
+.bmw-film-stage.is-playing .bmw-film-play,.bmw-film-stage.is-playing .bmw-film-credit{display:none}
+.bmw-film-footnote{display:flex;justify-content:space-between;gap:20px;align-items:start;padding:19px 3px 14px;border-bottom:1px solid #dde3e7}
+.bmw-film-footnote p{font-size:.81rem;line-height:1.65;color:#68798a;max-width:730px;margin:0}
+.bmw-editorial-legal{font-size:.73rem;color:#89949f;line-height:1.7;margin:18px 0 0}
+@media(max-width:900px){.bmw-editorial-intro{gap:30px;grid-template-columns:1fr 1.1fr}.bmw-editorial-facts{grid-template-columns:1fr;gap:24px}.bmw-editorial-facts p:not(.bmw-editorial-number){max-width:100%}}
+@media(max-width:660px){.bmw-editorial-topline{margin-bottom:29px;align-items:start;flex-direction:column;gap:9px}.bmw-editorial-source-label{text-align:left}.bmw-editorial-intro{grid-template-columns:1fr;gap:12px}.bmw-editorial-intro h2{font-size:clamp(1.9rem,8vw,2.55rem)}.bmw-editorial-kicker{margin-bottom:0}.bmw-editorial-prose{font-size:.93rem}.bmw-editorial-features{grid-template-columns:1fr;gap:6px;margin:30px 0 45px}.bmw-editorial-feature{padding:12px 0}.bmw-editorial-facts{padding:24px 18px;margin-bottom:65px}.bmw-editorial-facts dl{gap:14px}.bmw-editorial-video-heading{display:block}.bmw-editorial-video-heading h2{font-size:clamp(1.9rem,7.5vw,2.55rem)}.bmw-editorial-video-heading a{display:inline-block;margin-top:12px}.bmw-film-stage{aspect-ratio:4/3;border-radius:11px}.bmw-film-play{padding:11px 17px;font-size:.82rem}.bmw-film-credit{bottom:16px}.bmw-film-credit strong{max-width:98%;font-size:1.03rem}.bmw-film-footnote{flex-direction:column;gap:10px}}
+@media(prefers-reduced-motion:reduce){.bmw-film-play{transition:none}}
+/* Film playback is fully in-page. The official source link is citation only. */
+.bmw-film-inline-tag{font-size:.7rem;letter-spacing:.12em;font-weight:850;color:#45627f;border:1px solid #cbd5df;border-radius:100px;padding:12px 15px;white-space:nowrap}
+.bmw-film-player{position:absolute;inset:0;z-index:4;background:#07111f}
+.bmw-film-player iframe,.bmw-film-player video{position:absolute;inset:0;display:block;width:100%;height:100%;border:0;background:#070d14;object-fit:contain}
+.bmw-film-close{position:absolute;z-index:7;right:15px;top:13px;background:rgba(10,20,33,.84);border:1px solid #ffffff62;color:white;font-weight:750;border-radius:9px;padding:7px 12px;cursor:pointer;box-shadow:0 3px 15px #0005}
+.bmw-film-close:hover{background:#25364c}
+.bmw-film-error{position:absolute;z-index:10;inset:0;background:linear-gradient(125deg,#142536f2,#091421f7);color:white;padding:clamp(22px,5vw,55px);display:flex;justify-content:center;align-items:center;flex-direction:column;text-align:center;gap:14px}
+.bmw-film-error strong{font-size:clamp(1.15rem,2.4vw,1.65rem)}
+.bmw-film-error p{max-width:560px;margin:0;color:#d9e2ed;line-height:1.65}
+.bmw-film-error button{border:0;border-radius:9px;background:#e0aa32;color:#0c1420;font-weight:800;padding:12px 19px;cursor:pointer}
+/* Hidden must always win over display:flex on the loading/feedback layer. */
+.bmw-film-error[hidden],.bmw-film-player[hidden],.bmw-film-close[hidden],.bmw-film-play[hidden]{display:none!important}
+.bmw-film-stage.is-playing .bmw-film-play,.bmw-film-stage.is-playing .bmw-film-credit,.bmw-film-stage.is-playing .bmw-film-poster-shade{display:none}
+@media(max-width:700px){.bmw-film-inline-tag{display:inline-block;margin-top:14px;font-size:.63rem}.bmw-film-error{padding:17px}.bmw-film-close{right:9px;top:9px;font-size:.75rem;padding:6px 9px}.bmw-film-stage{aspect-ratio:16/10}}
