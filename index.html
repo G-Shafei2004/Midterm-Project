@@ -1,166 +1,502 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore BMW models, compare specifications and build your preferred configuration.">
-  <title>BMW Explorer | The Driving Experience</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark site-navbar">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">BMW <span>EXPLORER</span></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation" aria-controls="mainNav" aria-expanded="false">
-        <span class="navbar-toggler-icon"></span>
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta
+      name="description"
+      content="Explore BMW models, compare specifications and build your preferred configuration."
+    >
+    <title>BMW Explorer | The Driving Experience</title>
+    <script src="js/theme-init.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="css/style.css" >
+    <link rel="stylesheet" href="css/final.css" >
+      <link rel="stylesheet" href="css/bmw-polish.css?v=20261112" >
+  </head>
+  <body id="pageTop">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark site-navbar"
+      aria-label="Main navigation"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">BMW <span>EXPLORER</span></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-label="Toggle navigation"
+          aria-controls="mainNav"
+          aria-expanded="false"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link" data-nav="home" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-nav="innovation" href="innovation.html"
+                >BMW Innovation</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-nav="models" href="models.html"
+                >Models &amp; Garage</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-nav="saved" href="saved.html"
+                >Saved cars <span class="saved-count">0</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-nav="faq" href="index.html#faq">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <button
+                id="themeToggle"
+                type="button"
+                class="theme-toggle"
+                aria-pressed="false"
+              >
+                Dark mode
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header
+      class="hero home-hero"
+      id="hero"
+      aria-label="BMW Explorer introduction"
+    >
+      <video
+        class="hero-video"
+        preload="none"
+        muted
+        loop
+        playsinline
+        poster="images/video-poster.jpg"
+        aria-hidden="true"
+      >
+        <source src="videos/bmw-driving.mp4" type="video/mp4" ></video
+      ><button
+        class="video-toggle"
+        id="videoToggle"
+        type="button"
+        aria-pressed="false"
+      >
+        Play background video
       </button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="models.html">Models &amp; Garage</a></li>
-          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <header class="hero home-hero" id="hero" aria-label="BMW Explorer introduction">
-    <video class="hero-video"
-       autoplay
-       muted
-       loop
-       playsinline
-       poster="images/bmw-about.jpg"
-       aria-hidden="true">
-
-    <source src="videos/bmw-driving.mp4" type="video/mp4">
-
-</video>
-    <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
-    <div class="container hero-content">
-      <p class="eyebrow"><span class="eyebrow-line"></span> ENGINEERED FOR THE JOY OF DRIVING</p>
-      <h1>Precision in motion.<br><span>The BMW experience.</span></h1>
-      <p class="hero-copy">Explore a world where purposeful design, driver-focused engineering and modern technology come together.</p>
-      <a href="models.html" class="btn btn-gold btn-lg mt-3">Explore the garage <span aria-hidden="true">↗</span></a>
-      <div class="hero-stats">
-        <div><strong>1916</strong><span>Founded</span></div>
-        <div><strong>01</strong><span>Driver focus</span></div>
-        <div><strong>∞</strong><span>Ways to explore</span></div>
-      </div>
-    </div>
-    <div class="hero-side-label">BMW EXPLORER / 01</div>
-  </header>
-
-  <main>
-    <section class="features-section" id="experience">
-      <div class="container">
-        <p class="eyebrow dark-eyebrow">THE BMW DNA</p>
-        <h2 class="section-title">More than a <span class="accent">machine.</span></h2>
-        <div class="features-grid">
-          <article class="feature-card"><img class="feature-icon feature-photo" src="images/model-m3.jpg" alt="Close view of a BMW performance car front and side"><h3>Performance</h3><p>Responsive power and carefully balanced handling make every journey engaging.</p></article>
-          <article class="feature-card"><img class="feature-icon feature-photo" src="images/model-3series.jpg" alt="BMW sedan exterior detail showing its front design"><h3>Design</h3><p>Confident proportions and purposeful details create a distinctive presence.</p></article>
-          <article class="feature-card"><img class="feature-icon feature-photo" src="images/model-x5.jpg" alt="Close view of a BMW front grille and headlights"><h3>Technology</h3><p>Connected displays and driver assistance help make every trip intuitive.</p></article>
-          <article class="feature-card"><img class="feature-icon feature-photo" src="images/bmw-about.jpg" alt="BMW driving on a mountain road"><h3>Innovation</h3><p>Modern powertrain choices bring new possibilities to the driving experience.</p></article>
+      <div class="hero-orbit orbit-one"></div>
+      <div class="hero-orbit orbit-two"></div>
+      <div class="container hero-content">
+        <p class="eyebrow">
+          <span class="eyebrow-line"></span> ENGINEERED FOR THE JOY OF DRIVING
+        </p>
+        <h1>Find your drive.<br ><span>Make it yours.</span></h1>
+        <p class="hero-copy">
+          Discover the models. Compare your favourites. Create a BMW that
+          reflects your style — all in one place.
+        </p>
+        <div class="hero-actions">
+          <a href="innovation.html" class="btn btn-gold btn-lg"
+            >Explore BMW Innovation <span aria-hidden="true">→</span></a
+          ><a href="models.html" class="hero-secondary">Explore all models →</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>08</strong><span>Models to discover</span></div>
+          <div><strong>32</strong><span>Paint previews</span></div>
+          <div><strong>01</strong><span>Your next drive</span></div>
         </div>
       </div>
-    </section>
+      <div class="hero-side-label">BMW EXPLORER / 01</div>
+    </header>
 
-    <section class="about-section" id="about">
-      <div class="container">
-        <div class="row align-items-center g-5">
-          <div class="col-12 col-md-6">
-            <p class="eyebrow dark-eyebrow">A LEGACY IN MOTION</p>
-            <h2 class="section-title">A century of <span class="accent">engineering.</span></h2>
-            <p>BMW was founded in 1916 in Munich, Germany. Over time, the company became known for combining performance, comfort and driver engagement.</p>
-            <p>Today, the lineup includes sedans, SUVs and electric vehicles. Each model offers a different interpretation of the driving experience.</p>
-            <a class="text-link" href="models.html">Find your BMW <span aria-hidden="true">→</span></a>
+    <main id="main">
+      <section class="start-section">
+        <div class="container">
+          <div class="start-heading">
+            <p class="eyebrow dark-eyebrow">
+              A GOOD DRIVE STARTS WITH A LITTLE CURIOSITY
+            </p>
+            <h2 class="section-title">
+              Where would you<br >like to <span class="accent">begin?</span>
+            </h2>
           </div>
-          <div class="col-12 col-md-6"><img src="images/bmw-about.jpg" class="img-fluid about-image" alt="BMW cars on a mountain road beneath a dramatic sky"></div>
+          <div class="journey-grid">
+            <a class="journey-card journey-link" href="innovation.html"
+              ><span class="journey-number">01 / DISCOVER</span>
+              <h3>Discover BMW technology.</h3>
+              <p>
+                Explore digital displays, assistance systems, electric mobility and connected features.
+              </p>
+              <span class="journey-arrow" aria-hidden="true">→</span></a
+            ><a class="journey-card journey-link" href="models.html#compare"
+              ><span class="journey-number">02 / COMPARE</span>
+              <h3>See the difference.</h3>
+              <p>Bring up to three models together for a closer look.</p>
+              <span class="journey-arrow" aria-hidden="true">→</span></a
+            ><a class="journey-card journey-link" href="models.html#garage"
+              ><span class="journey-number">03 / CREATE</span>
+              <h3>Show your character.</h3>
+              <p>
+                Explore matching paint previews and build your example estimate.
+              </p>
+              <span class="journey-arrow" aria-hidden="true">→</span></a
+            >
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <section class="features-section" id="experience">
+        <div class="container">
+          <p class="eyebrow dark-eyebrow">THE BMW DNA</p>
+          <h2 class="section-title">
+            More than a <span class="accent">machine.</span>
+          </h2>
+          <div class="features-grid">
+            <article class="feature-card">
+              <img
+                class="feature-icon feature-photo"
+                src="images/model-m3.jpg"
+                alt="Close view of a BMW performance car front and side"
+              >
+              <h3>Performance</h3>
+              <p>
+                Responsive power and carefully balanced handling make every
+                journey engaging.
+              </p>
+            </article>
+            <article class="feature-card">
+              <img
+                class="feature-icon feature-photo"
+                src="images/model-3series.jpg"
+                alt="Silver BMW coupe exterior detail"
+              >
+              <h3>Design</h3>
+              <p>
+                Confident proportions and purposeful details create a
+                distinctive presence.
+              </p>
+            </article>
+            <article class="feature-card">
+              <img
+                class="feature-icon feature-photo"
+                src="images/model-x5.jpg"
+                alt="Close view of a BMW front grille and headlights"
+              >
+              <h3>Technology</h3>
+              <p>
+                Connected displays and driver assistance help make every trip
+                intuitive.
+              </p>
+            </article>
+            <article class="feature-card">
+              <img
+                class="feature-icon feature-photo"
+                src="images/bmw-about.jpg"
+                alt="BMW driving on a mountain road"
+              >
+              <h3>Innovation</h3>
+              <p>
+                Modern powertrain choices bring new possibilities to the driving
+                experience.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-    <section class="featured-section" id="featured">
+      <section class="about-section" id="about">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <div class="col-12 col-md-6">
+              <p class="eyebrow dark-eyebrow">A LEGACY IN MOTION</p>
+              <h2 class="section-title">
+                A century of <span class="accent">engineering.</span>
+              </h2>
+              <p>
+                BMW was founded in 1916 in Munich, Germany. Over time, the
+                company became known for combining performance, comfort and
+                driver engagement.
+              </p>
+              <p>
+                Today, the lineup includes sedans, SUVs and electric vehicles.
+                Each model offers a different interpretation of the driving
+                experience.
+              </p>
+              <a class="text-link" href="innovation.html"
+                >BMW Innovation <span aria-hidden="true">→</span></a
+              >
+            </div>
+            <div class="col-12 col-md-6">
+              <img
+                src="images/bmw-about.jpg"
+                class="img-fluid about-image"
+                alt="BMW on a mountain road beneath a dramatic sky"
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="featured-section" id="featured">
+        <div class="container">
+          <div class="section-heading-row">
+            <div>
+              <p class="eyebrow">FIND YOUR CHARACTER</p>
+              <h2 class="section-title text-white">
+                A range for every <span class="gold-text">journey.</span>
+              </h2>
+            </div>
+            <a class="text-link featured-link" href="models.html"
+              >Explore all models <span aria-hidden="true">→</span></a
+            >
+          </div>
+          <div class="featured-grid">
+            <article class="featured-model featured-model-large">
+              <img src="images/cars/3-series-0.webp" alt="BMW 3 Series" >
+              <div>
+                <span>EVERYDAY BALANCE</span>
+                <h3>3 Series</h3>
+                <a href="model.html?id=3-series">Discover the 3 Series →</a>
+              </div>
+            </article>
+            <article class="featured-model">
+              <img src="images/cars/x5-0.webp" alt="BMW X5 SUV" >
+              <div>
+                <span>ROOM TO EXPLORE</span>
+                <h3>X5</h3>
+                <a href="model.html?id=x5">Discover the X5 →</a>
+              </div>
+            </article>
+            <article class="featured-model">
+              <img src="images/cars/m3-0.webp" alt="BMW M3 Sedan" >
+              <div>
+                <span>PERFORMANCE DNA</span>
+                <h3>M3 Competition</h3>
+                <a href="model.html?id=m3">Discover the M3 →</a>
+              </div>
+            </article>
+          </div>
+          <p class="image-note">
+            Official BMW model and paint previews. Specifications, prices and
+            package costs in this student project are illustrative.
+          </p>
+        </div>
+      </section>
+
+      <section class="faq-section" id="faq">
+        <div class="container narrow-container">
+          <p class="eyebrow dark-eyebrow text-center">GOOD TO KNOW</p>
+          <h2 class="section-title text-center">
+            Frequently asked <span class="accent">questions.</span>
+          </h2>
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                Will my saved cars be here next time?<span aria-hidden="true"
+                  >+</span
+                >
+              </button>
+              <div class="faq-answer" hidden>
+                <p>
+                  Yes, in the same browser and on the same website. Saved cars
+                  use localStorage. Clearing browser data or using another
+                  device will not keep that collection.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                Does this website send a request to BMW?<span aria-hidden="true"
+                  >+</span
+                >
+              </button>
+              <div class="faq-answer" hidden>
+                <p>
+                  No. This is an educational front-end project. The form checks
+                  your details locally and shows a confirmation, but sends
+                  nothing to a dealer. Prices and performance figures are
+                  illustrative examples.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="true">
+                Which BMW model is suitable for everyday use?<span
+                  aria-hidden="true"
+                  >−</span
+                >
+              </button>
+              <div class="faq-answer">
+                <p>
+                  The 3 Series is a popular choice for everyday driving because
+                  it balances comfort, size and performance.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                Does BMW make electric vehicles?<span aria-hidden="true"
+                  >+</span
+                >
+              </button>
+              <div class="faq-answer" hidden>
+                <p>
+                  Yes. BMW offers fully electric models, including vehicles in
+                  its i range.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                What does the M badge represent?<span aria-hidden="true"
+                  >+</span
+                >
+              </button>
+              <div class="faq-answer" hidden>
+                <p>
+                  The M badge represents BMW's performance division and its
+                  high-performance vehicles.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
       <div class="container">
-        <div class="section-heading-row">
-          <div><p class="eyebrow">FIND YOUR CHARACTER</p><h2 class="section-title text-white">A range for every <span class="gold-text">journey.</span></h2></div>
-          <a class="text-link featured-link" href="models.html">Explore all models <span aria-hidden="true">↗</span></a>
+        <div class="footer-top">
+          <div>
+            <a class="navbar-brand" href="index.html"
+              >BMW <span>EXPLORER</span></a
+            >
+            <p>A little curiosity.<br >A drive that feels like you.</p>
+          </div>
+          <div class="footer-links">
+            <a href="innovation.html">BMW Innovation</a
+            ><a href="models.html">Explore models</a
+            ><a href="models.html#garage">Build your car</a
+            ><a href="saved.html">Your saved cars</a
+            ><a href="models.html#contact">Request a conversation</a>
+          </div>
+          <div class="footer-note">
+            <p>
+              Independent educational project.<br >Not affiliated with BMW.
+            </p>
+            <p>
+              Illustrative prices. No orders or messages are sent to a dealer.
+            </p>
+            <a href="#pageTop">Back to top ↑</a>
+          </div>
         </div>
-        <div class="featured-grid">
-          <article class="featured-model featured-model-large">
-            <img src="images/model-3series.jpg" alt="BMW coupe photographed on an open road">
-            <div><span>SPORTS SEDAN DNA</span><h3>3 Series</h3><a href="models.html#models">Explore the range ↗</a></div>
-          </article>
-          <article class="featured-model">
-            <img src="images/model-x5.jpg" alt="Red BMW on a wet road">
-            <div><span>VERSATILE LUXURY</span><h3>X family</h3><a href="models.html#models">Explore the range ↗</a></div>
-          </article>
-          <article class="featured-model">
-            <img src="images/model-m3.jpg" alt="Black BMW coupe">
-            <div><span>PERFORMANCE DNA</span><h3>BMW M</h3><a href="models.html#models">Explore the range ↗</a></div>
-          </article>
+        <details class="footer-credits" id="credits">
+          <summary>Credits &amp; sources</summary>
+          <div class="credits-content">
+            <h2 class="visually-hidden">Sources and acknowledgements</h2>
+            <h3>Code and typography</h3>
+            <ul>
+              <li>
+                <a href="https://getbootstrap.com/docs/5.3/">Bootstrap 5.3.3</a
+                >: responsive grid, navigation and form components.
+              </li>
+              <li>
+                <a href="https://jquery.com/">jQuery 3.7.1</a>: FAQ slide
+                effects, catalogue fades and smooth scrolling.
+              </li>
+              <li>
+                <a href="https://fonts.google.com/">Google Fonts</a>: Inter and
+                Playfair Display.
+              </li>
+              <li>
+                ChatGPT (OpenAI): requirements review, code suggestions and
+                implementation assistance, debugging, testing and documentation
+                support.
+              </li>
+            </ul>
+            <h3>BMW model and colour previews</h3>
+            <p>
+              Model and paint images © BMW AG, sourced from the official BMW
+              Middle East model pages linked below. Local WebP copies are used
+              for educational demonstration. Paint availability and vehicle
+              equipment vary by market and model year. These images are not
+              claimed as original work.
+            </p>
+            <ul class="footer-model-sources"></ul>
+            <h3>Editorial photographs and video</h3>
+            <ul>
+              <li>
+                <a href="https://unsplash.com/@thylervoss"
+                  >Thyler Voss / Unsplash</a
+                >: mountain-road BMW photograph. This is the photographer
+                profile; the exact original photo URL remains unconfirmed.
+              </li>
+              <li>
+                <a href="https://unsplash.com/photos/_4sWbzH5fp8"
+                  >Josh Berquist / Unsplash</a
+                >: silver BMW M4.
+              </li>
+              <li>
+                <a href="https://unsplash.com/photos/ApT14-r3OH0"
+                  >Erik Mclean / Unsplash</a
+                >: red BMW.
+              </li>
+              <li>
+                <a href="https://unsplash.com/photos/AvuK9LPk2eg"
+                  >Martin Katler / Unsplash</a
+                >: black BMW coupe.
+              </li>
+              <li>
+                <a
+                  href="https://pixabay.com/videos/car-vehicle-road-bmw-speed-167659/"
+                  >Ali_fathy / Pixabay</a
+                >: home-page driving video.
+              </li>
+            </ul>
+            <h3>About the numbers and your data</h3>
+            <p>
+              Prices, performance figures and package costs are simplified
+              educational examples carried forward from the Endterm. Consult the
+              linked official model pages for current specifications. No order
+              or enquiry is transmitted. Theme, saved car IDs and an unfinished
+              form draft are stored locally in your browser.
+            </p>
+            <p>
+              <a href="https://github.com/G-Shafei2004/Midterm-Project"
+                >Project repository</a
+              >
+              ·
+              <a href="https://g-shafei2004.github.io/Midterm-Project/"
+                >GitHub Pages</a
+              >
+            </p>
+          </div>
+        </details>
+        <div class="footer-bottom">
+          <small>© 2026 · Ghulam Ali Shafei</small
+          ><span>Made for the joy of exploring.</span>
         </div>
-        <p class="image-note">Vehicle photographs are representative visuals; specifications and prices on this student project are illustrative.</p>
       </div>
-    </section>
-
-    <section class="faq-section" id="faq">
-      <div class="container narrow-container">
-        <p class="eyebrow dark-eyebrow text-center">GOOD TO KNOW</p>
-        <h2 class="section-title text-center">Frequently asked <span class="accent">questions.</span></h2>
-        <div class="faq-list">
-          <article class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="true">Which BMW model is suitable for everyday use?<span aria-hidden="true">−</span></button>
-            <div class="faq-answer"><p>The 3 Series is a popular choice for everyday driving because it balances comfort, size and performance.</p></div>
-          </article>
-          <article class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">Does BMW make electric vehicles?<span aria-hidden="true">+</span></button>
-            <div class="faq-answer" hidden><p>Yes. BMW offers fully electric models, including vehicles in its i range.</p></div>
-          </article>
-          <article class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">What does the M badge represent?<span aria-hidden="true">+</span></button>
-            <div class="faq-answer" hidden><p>The M badge represents BMW's performance division and its high-performance vehicles.</p></div>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-<section id="credits" class="py-4 border-top">
-  <div class="container">
-    <h2 class="h5">Credits and resources</h2>
-
-    <p class="small">
-      Built with Bootstrap 5.3.3 and jQuery 3.7.1.
-      Typography: Inter and Playfair Display from Google Fonts.
-      ChatGPT assisted with code suggestions, debugging.
-    </p>
-
-    <p class="small mb-2">
-      Photography from Unsplash:
-      <a href="https://unsplash.com/@thylervoss">Thyler Voss</a>
-      — mountain-road BMW;
-      <a href="https://unsplash.com/photos/_4sWbzH5fp8">Josh Berquist</a>
-      — silver BMW M4;
-      <a href="https://unsplash.com/photos/ApT14-r3OH0">Erik Mclean</a>
-      — red BMW;
-      <a href="https://unsplash.com/photos/AvuK9LPk2eg">Martin Katler</a>
-      — black BMW coupe.
-    </p>
-
-    <p class="small mb-0">
-      Home background video:
-      <a href="https://pixabay.com/videos/car-vehicle-road-bmw-speed-167659/">
-        Ali_fathy on Pixabay
-      </a>.
-    </p>
-  </div>
-</section>
-  <footer class="site-footer">
-    <div class="container footer-inner"><a class="navbar-brand" href="index.html">BMW <span>EXPLORER</span></a><p>Independent educational project. Not an official BMW website.</p><small>© 2026 BMW Explorer · Built with Bootstrap, jQuery and Google Fonts · Ghulam Ali</small></div>
-  </footer>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/main.js"></script>
-</body>
+    </footer>
+    <div
+      id="siteStatus"
+      class="site-status"
+      role="status"
+      aria-live="polite"
+    ></div>
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js?v=configure-fix-20261113"></script>
+    <script src="js/experience.js"></script>
+  </body>
 </html>
